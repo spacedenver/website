@@ -3,8 +3,8 @@ import { Tick } from "@components/ui/icons";
 import Link from "@components/ui/link.astro";
 
 const { plan } = Astro.props;
-const isComingSoon = plan.name !== "Public" && plan.name !== "Base Membership" && plan.name !== "Full Co-Working Membership" && plan.name !== "Become a Sponsor";
-const isMainOption = plan.name === "Base Membership" || plan.name === "Full Co-Working Membership";
+const isComingSoon = plan.name !== "Public" && plan.name !== "Social Membership" && plan.name !== "Co-Working Membership" && plan.name !== "Become a Sponsor";
+const isMainOption = plan.name === "Social Membership" || plan.name === "Co-Working Membership";
 const isSponsorCard = plan.name === "Become a Sponsor";
 const isLowerTier = ["Public", "Day Pass", "Add-Ons"].includes(plan.name);
 ---

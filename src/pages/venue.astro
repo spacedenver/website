@@ -1,0 +1,291 @@
+---
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const publishedVolunteers = await getCollection("volunteers", ({ data }) => {
+  return !data.draft && new Date(data.publishDate) < new Date();
+});
+
+const values = [
+  { title: "Event Space", description: "Our presentation room and common area connect, perfect for larger events.", icon: "bx:building" },
+  { title: "Co-Working Desks", description: "Large fold up desks on wheels and office chairs make it easy to work wherever.", icon: "bx:bxs-group" },
+  { title: "Conference Room", description: "A bookable conference room is ready for calls, meetings and private presentations.", icon: "bx:table" },
+  { title: "Lounge Space", description: "Half of our venue is setup for lounging and socialization, with premium furniture and decor. Sound-money vibe.", icon: "bx:chair" },
+  { title: "Podcast Room", description: "A private podcast room allows us to record content without disturbing others.", icon: "bx:bxs-microphone" },
+  { title: "Backyard", description: "A fenced backyard and hangout space connects to two separate parts of the building. Great for BBQs.", icon: "bx:bxs-tree" },
+  { title: "Snacks and Drinks", description: "We keep stock of some popular workplace snacks and drinks.", icon: "bx:bxs-drink" },
+  { title: "2 Kitchens, 3 Bathrooms", description: "Two full kitchens and three bathrooms keep things from feeling overwhelmed.", icon: "bx:dish" },
+  { title: "Off Street Parking", description: "Our venue has five parking spots behind the building. First come, first serve.", icon: "bx:bxs-car" },
+];
+---
+
+<style>
+  body, html {
+    overflow-x: hidden;
+  }
+
+  .custom-gradient {
+    background: linear-gradient(130deg, #E51F5D, #F68830, #F5D54C, #F68830);
+  }
+
+  .white-svg {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  }
+
+  .volunteer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .volunteer-container .volunteer {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .volunteer-container img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .volunteer-section {
+    padding-top: 0;
+    margin-top: -20px;
+  }
+
+  .volunteer-section h2, .volunteer-section p {
+    margin-bottom: 20px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    background-color: #131313;
+    padding: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    background-color: transparent;
+  }
+
+  th, td {
+    border: 2px solid #000000;
+    padding: 10px;
+    text-align: center;
+    background-color: #131313;
+    color: #fff;
+    width: 14.2857%;
+    position: relative;
+  }
+
+  th {
+    background-color: #131313;
+  }
+
+  .checkmark::before {
+    content: "✓";
+    color: #bebebe;
+    font-size: 20px;
+  }
+
+  .dash::before {
+    content: "—";
+    color: #a4a4a4;
+    font-size: 20px;
+  }
+
+  .cross::before {
+    content: "✗";
+    color: #6d6d6d;
+    font-size: 20px;
+  }
+
+  .custom-logo {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp') no-repeat center center;
+    background-size: contain;
+  }
+
+  @media (max-width: 768px) {
+    th, td {
+      padding: 5px;
+      font-size: 12px;
+    }
+
+    .checkmark::before, .dash::before, .cross::before {
+      font-size: 15px;
+    }
+
+    .vision-grid, .process-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    th, td {
+      padding: 1px;
+      font-size: 10px;
+    }
+
+    .checkmark::before, .dash::before, .cross::before {
+      font-size: 12px;
+    }
+  }
+
+  .list-custom {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .list-custom li {
+    padding-left: 50px;
+    position: relative;
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  .list-custom li:nth-child(1)::before {
+    content: "";
+    background: url('/assets/branding/Logos/TheSpace_Logos_Number_1.webp') no-repeat center center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .list-custom li:nth-child(2)::before {
+    content: "";
+    background: url('/assets/branding/Logos/TheSpace_Logos_Number_2.webp') no-repeat center center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .list-custom li:nth-child(3)::before {
+    content: "";
+    background: url('/assets/branding/Logos/TheSpace_Logos_Number_3.webp') no-repeat center center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .vision-grid, .process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .vision-textbox, .process-textbox {
+    background-color: #131313;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    color: white;
+  }
+
+  .vision-card, .process-card {
+    background-color: #131313;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    color: white;
+  }
+
+  .link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .link-button {
+    flex: 1;
+    color: #000000;
+    text-decoration: none;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+
+    .link-button:hover {
+    background-color: #d8d8d8;
+    color: rgb(0, 0, 0);
+  }
+</style>
+
+<Layout title="About Us">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Our Bitcoin Hub</Fragment>
+      <Fragment slot="desc">
+        <p class="text-lg mt-4 text-slate-600 px-0 md:px-4 lg:px-10">
+          3700 N Franklin St. Denver, CO. <br/>
+        </p>
+        <p class="text-lg mt-4 text-justify text-slate-600 px-0 md:px-4 lg:px-10">
+          The Space is located in the heart of Denver, CO near the Rino neighborhood. Our building is only a few blocks walk from the 38th & Blake train stop, connecting Union Station to the Denver Airport.
+        </p>
+      </Fragment>
+    </Sectionhead>
+    <section class="flex flex-col mt-28 mb-28 items-center lg:space-y-7">
+      <img src="/assets/venue/3700Franklin_Back.webp" alt="The Space Building Front" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
+    </section>
+    <section class="flex flex-col mt-28 mb-28 items-center lg:space-y-7">
+      <img src="/assets/venue/3700Franklin_Front.webp" alt="The Space Building Front" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
+    </section>
+
+
+    <div class="px-0">
+      <section class="mt-28 mb-20">
+        <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-28">Building Amenities</h2>
+        <p class="text-lg mt-4 text-slate-600">We've Got it All:</p>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 mb-6 gap-16">
+          {values.map((item) => (
+            <div class="flex gap-4 items-start">
+              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+                <Icon class="text-white" name={item.icon} />
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">{item.title}</h3>
+                <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </Container>
+</Layout>
