@@ -1,11 +1,11 @@
 ---
 draft: false
-name: "Sponsor The Space"
-title: "Sponsor The Space"
-url: "https://denver.space"
+name: "Learn More"
+title: "Casa"
+url: "https://casa.io"
 avatar: {
-    src: "/assets/sponsors/TheSpace_Logos_Symbol_3.webp",
-    alt: "Sponsor The Space"
+    src: "/assets/sponsors/casa.webp",
+    alt: "Casa"
 }
-publishDate: "2023-11-09 15:39"
+publishDate: "2024-09-21 15:39"
 ---
