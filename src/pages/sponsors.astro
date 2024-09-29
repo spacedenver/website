@@ -50,7 +50,7 @@ const sponsorPlan = {
   }
   .sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    grid-template-columns: repeat(2, 1fr); /* 3 columns on large screens */
     gap: 2rem; /* Increase the gap for more horizontal padding */
     justify-items: center;
   }
@@ -90,14 +90,14 @@ const sponsorPlan = {
     <Sectionhead>
       <Fragment slot="title">Sponsors</Fragment>
       <Fragment slot="desc">
-        The Space was made possible by founding members, donors and sponsors. Join us in building something special.
+        The Space was made possible by our Founding Members, Donors and Founding Sponsors. Reach out to get involved.
       </Fragment>
     </Sectionhead>
 
     <!-- Founding Sponsors Section -->
     <div class="grid md:grid-cols-2 gap-6 mx-auto max-w-6xl mt-20 mb-20 px-4 lg:px-0">
       <div class="order-1 md:order-2 flex flex-col gap-3">
-        <h2 class="font-bold text-3xl text-gray-800">Founding Support</h2>
+        <h2 class="font-bold text-center text-3xl text-gray-800">Our Founding Support</h2>
         <div class="grid grid-cols-3 md:grid-cols-3 gap-6 mt-5 pr-0 lg:pr-16 sponsors-grid">
           {publishedSponsors.map(sponsor => (
             <a href={sponsor.data.url} target="_blank" rel="noopener noreferrer" class="block">

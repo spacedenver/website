@@ -7,5 +7,5 @@ avatar: {
     src: "/assets/sponsors/fedi.webp",
     alt: "Fedi"
 }
-publishDate: "2024-06-09 15:39"
+publishDate: "2024-05-09 15:39"
 ---

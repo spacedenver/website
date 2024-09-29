@@ -1,11 +1,11 @@
 ---
 draft: false
-name: "Sponsor The Space"
-title: "Sponsor The Space"
-url: "https://denver.space"
+name: "Learn More"
+title: "Fedi"
+url: "https://www.fedi.xyz"
 avatar: {
-    src: "/assets/sponsors/TheSpace_Logos_Symbol_3.webp",
-    alt: "Sponsor The Space"
+    src: "/assets/sponsors/fedi.webp",
+    alt: "Fedi"
 }
-publishDate: "2024-09-26 15:39"
+publishDate: "2024-10-09 15:39"
 ---
