@@ -20,6 +20,10 @@ publishedSponsors.sort((a, b) => {
   return dateA - dateB;
 });
 
+// Separate sponsors based on the date (before and after 9/28/2024)
+const foundingSponsors = publishedSponsors.filter(sponsor => new Date(sponsor.data.publishDate) <= new Date('2024-09-28'));
+const newSponsors = publishedSponsors.filter(sponsor => new Date(sponsor.data.publishDate) > new Date('2024-09-28'));
+
 const sponsorPlan = {
   name: "Become a Sponsor",
   price: "Support The Mission",
@@ -27,10 +31,10 @@ const sponsorPlan = {
   features: [
     "Host your Own Events & Presentations",
     "Brand Recognition & Marketing",
-    "Association with one of the few Bitcoin Citadels",
+    "Association with The Space",
     "Sell your Goods and Services",
     "Bitcoin Community Involvement",
-    "Co-Working or Private Office Space",
+    "Membership, Co-Working or Private Offices",
     "Exclusive Talent Access",
     "Your Ideas & more..."
   ],
@@ -50,7 +54,7 @@ const sponsorPlan = {
   }
   .sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 3 columns on large screens */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on large screens */
     gap: 2rem; /* Increase the gap for more horizontal padding */
     justify-items: center;
   }
@@ -83,6 +87,33 @@ const sponsorPlan = {
       grid-template-columns: repeat(3, 1fr); /* 3 columns on landscape-oriented small screens */
     }
   }
+
+  /* Non-Founding Sponsors specific styles */
+  .non-founding-sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on larger screens */
+    gap: 2rem;
+    justify-items: center;
+  }
+  .smaller-sponsor-logo {
+    width: 100px;
+    height: 100px;
+  }
+  @media (max-width: 1024px) {
+    .non-founding-sponsors-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens like tablets */
+    }
+    .smaller-sponsor-logo {
+      width: 90px;
+      height: 90px;
+    }
+  }
+  @media (max-width: 600px) {
+    .smaller-sponsor-logo {
+      width: 80px;
+      height: 80px;
+    }
+  }
 </style>
 
 <Layout title="Sponsors">
@@ -90,7 +121,7 @@ const sponsorPlan = {
     <Sectionhead>
       <Fragment slot="title">Sponsors</Fragment>
       <Fragment slot="desc">
-        The Space was made possible by our Founding Members, Donors and Founding Sponsors. Reach out to get involved.
+        The Space was made possible by Founding Sponsors, Members and Donors. Reach out to get involved.
       </Fragment>
     </Sectionhead>
 
@@ -99,7 +130,7 @@ const sponsorPlan = {
       <div class="order-1 md:order-2 flex flex-col gap-3">
         <h2 class="font-bold text-center text-3xl text-gray-800">Our Founding Support</h2>
         <div class="grid grid-cols-3 md:grid-cols-3 gap-6 mt-5 pr-0 lg:pr-16 sponsors-grid">
-          {publishedSponsors.map(sponsor => (
+          {foundingSponsors.map(sponsor => (
             <a href={sponsor.data.url} target="_blank" rel="noopener noreferrer" class="block">
               <div class="relative w-full aspect-square">
                 <img src={sponsor.data.avatar?.src || '/default-event-image.webp'}
@@ -117,6 +148,26 @@ const sponsorPlan = {
         <PricingCard plan={sponsorPlan} />
       </div>
     </div>
+    
+<!-- Non-Founding Sponsors Section -->
+<div class="grid gap-6 mx-auto max-w-6xl mt-20 mb-20 px-4 lg:px-0">
+  <div class="flex flex-col gap-3">
+    <h2 class="font-bold text-center text-3xl text-gray-800">Become a New Sponsor</h2>
+    <div class="non-founding-sponsors-grid">
+      {newSponsors.map(sponsor => (
+        <a href={sponsor.data.url} target="_blank" rel="noopener noreferrer" class="block">
+          <div class="relative w-full aspect-square">
+            <img src={sponsor.data.avatar?.src || '/default-event-image.webp'}
+                loading="eager"
+                alt={sponsor.data.avatar.alt || 'Sponsor Image'}
+                class="w-full h-full rounded bg-white object-contain aspect-square smaller-sponsor-logo" />
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
     <!-- Donate to The Space Button -->
     <div class="flex justify-center mt-0 mb-4">
       <Link
