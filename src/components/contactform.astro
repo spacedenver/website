@@ -1,5 +1,8 @@
 ---
 import Button from "./ui/button.astro";
+
+// Access the environment variable in Astro
+const accessKey = import.meta.env.PUBLIC_EMAIL_KEY;
 ---
 
 <form
@@ -7,12 +10,9 @@ import Button from "./ui/button.astro";
   method="POST"
   id="form"
   class="needs-validation"
-  novalidate>
-  <input
-    type="hidden"
-    name="access_key"
-    value={process.env.PUBLIC_EMAIL_KEY}
-  />
+  novalidate
+>
+  <input type="hidden" name="access_key" value={accessKey} />
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">
     <input
