@@ -19,7 +19,7 @@ pastEvents = pastEvents.sort((a, b) => {
 ---
 
 <Layout title="Events">
-  <Container>
+  <Container class="w-full">
     <Sectionhead>
       <Fragment slot="title">Events</Fragment>
       <Fragment slot="desc">
@@ -27,112 +27,7 @@ pastEvents = pastEvents.sort((a, b) => {
       </Fragment>
     </Sectionhead>
 
-    <!-- Upcoming Events Section -->
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">Upcoming Events</h2>
-      <div class="grid event-grid gap-10 mx-auto max-w-4xl mt-12">
-        {upcomingEvents.length === 0 ? (
-          <div class="group border-4 border-[#ffffff] rounded-lg p-6 text-center text-lg text-white event-card custom-gradient">
-            More events coming soon!
-          </div>
-        ) : (
-          upcomingEvents.map(event => (
-            <div class="group border-4 border-[#ffffff] rounded-lg p-2 event-card">
-              <div class="relative w-full aspect-square">
-                <img src={event.data.image?.src || '/default-event-image.webp'}
-                    loading="eager"
-                    alt={event.data.title}
-                    class="w-full rounded bg-white object-cover object-center aspect-square" />
-                <div class="absolute inset-0 bg-black bg-opacity-90 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-start text-white p-4 space-y-3 group-hover:opacity-100">
-                  <h3 class="text-lg font-semibold text-center w-full">{event.data.title}</h3>
-                  {event.data.access !== "Member Exclusive" ? (
-                    <>
-                      <p class="w-full">Date:<br/>{new Date(event.data.date).toLocaleString("en-US", { dateStyle: 'full', timeStyle: 'short' })}</p>
-                      <p class="w-full">Location:<br/>{event.data.location}</p>
-                    </>
-                  ) : (
-                    <a href="/signin" class="text-red-500 underline">Log in to view member exclusive event details!</a>
-                  )}
-                  <p class="w-full">Description:<br/>{event.data.description}</p>
-                </div>
-              </div>
-              <div class="mt-4 text-center px-4">
-                {event.data.url ? (
-                  <a href={event.data.url} target="_blank" rel="noopener noreferrer" class="text-lg text-white hover:underline">
-                    RSVP: {event.data.title}
-                  </a>
-                ) : (
-                  <h3 class="text-lg text-white">{event.data.title}</h3>
-                )}
-                <p class="text-sm text-white">{new Date(event.data.date).toLocaleDateString()}</p>
-                <p class="text-sm text-white">{event.data.access}</p>
-              </div>
-            </div>
-          ))
-        )}
-      </div>
-    </div>
-
-    <!-- Past Events Section -->
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16 mb-20">
-      <h2 class="font-bold text-3xl text-gray-800">Past Events</h2>
-      <div class="grid event-grid gap-10 mx-auto max-w-4xl mt-12">
-        {pastEvents.map(event => (
-          <div class="group border-4 border-[#ffffff] rounded-lg p-2 event-card">
-            <div class="relative w-full aspect-square">
-              <img src={event.data.image?.src || '/default-event-image.webp'}
-                  loading="eager"
-                  alt={event.data.title}
-                  class="w-full rounded bg-white object-cover object-center aspect-square" />
-              <div class="absolute inset-0 bg-black bg-opacity-90 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-start text-white p-4 space-y-3 group-hover:opacity-100">
-                <h3 class="text-lg font-semibold text-center w-full">{event.data.title}</h3>
-                <p class="w-full">Date:<br/>{new Date(event.data.date).toLocaleString("en-US", { dateStyle: 'full', timeStyle: 'short' })}</p>
-                <p class="w-full">Location:<br/>{event.data.location}</p>
-                <p class="w-full">Description:<br/>{event.data.description}</p>
-              </div>
-            </div>
-            <div class="mt-4 text-center px-4">
-              {event.data.url ? (
-                <a href={event.data.url} target="_blank" rel="noopener noreferrer" class="text-lg text-white hover:underline">
-                  RSVP: {event.data.title}
-                </a>
-              ) : (
-                <h3 class="text-lg text-white">{event.data.title}</h3>
-              )}
-              <p class="text-sm text-white">{new Date(event.data.date).toLocaleDateString()}</p>
-              <p class="text-sm text-white">{event.data.access}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    <iframe src="https://nextcloud.denver.space/apps/calendar/embed/ioCC4mJi9dSsAkDC" class="w-full h-screen mt-20 mb-20" style="height: 90vh;" />
+    
   </Container>
 </Layout>
-
-<style>
-  .event-card {
-    background: linear-gradient(0deg, #E51F5D, #F68830,#F5D54C, #FDE3B7);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-  }
-  .event-card:hover {
-    transform: translateY(-5px);
-  }
-  .custom-gradient {
-    background: linear-gradient(135deg, #E51F5D, #F68830, #F5D54C, #FDE3B7);
-  }
-  .event-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 768px) {
-    .event-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (max-width: 768px) and (orientation: landscape) {
-    .event-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-</style>
