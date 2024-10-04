@@ -33,9 +33,6 @@ if (error) {
 
 const email = data.user?.email;
 
-const upcomingEvents = await getCollection("events", ({ data }) => {
-  return !data.draft && new Date(data.date) >= new Date();
-});
 ---
 
 <Layout title="Dashboard">
