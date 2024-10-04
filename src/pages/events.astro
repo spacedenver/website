@@ -4,18 +4,6 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
-const upcomingEvents = await getCollection("events", ({ data }) => {
-  return !data.draft && new Date(data.date) >= new Date();
-});
-
-let pastEvents = await getCollection("events", ({ data }) => {
-  return !data.draft && new Date(data.date) < new Date();
-});
-
-// Sort past events in descending order by date
-pastEvents = pastEvents.sort((a, b) => {
-  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
-});
 ---
 
 <Layout title="Events">
@@ -27,7 +15,6 @@ pastEvents = pastEvents.sort((a, b) => {
       </Fragment>
     </Sectionhead>
 
-    <iframe src="https://nextcloud.denver.space/apps/calendar/embed/ioCC4mJi9dSsAkDC" class="w-full h-screen mt-20 mb-20" style="height: 90vh;" />
-    
+    <iframe src="https://nextcloud.denver.space/apps/calendar/embed/ioCC4mJi9dSsAkDC" class="w-full h-screen mt-12 mb-20" style="height: 90vh;" />
   </Container>
 </Layout>
