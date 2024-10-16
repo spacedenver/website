@@ -1,7 +1,7 @@
 ---
 draft: false
 name: "Wyatt O."
-title: "Chief Community Officer"
+title: "Chief Marketing Officer"
 bio: "Founder of Basilic Financial, a bitcoin wealth management firm."
 avatar: {
     src: "/assets/headshots/wyatt.webp",
