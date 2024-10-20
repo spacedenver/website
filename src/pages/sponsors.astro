@@ -126,10 +126,10 @@ const sponsorPlan = {
     </Sectionhead>
 
     <!-- Founding Sponsors Section -->
-    <div class="grid md:grid-cols-2 gap-6 mx-auto max-w-6xl mt-20 mb-20 px-4 lg:px-0">
-      <div class="order-1 md:order-2 flex flex-col gap-3">
+    <div class="grid md:grid-cols-1 gap-6 mx-auto max-w-6xl mt-12 mb-12 px-4 lg:px-0">
+      <div class="order-2 md:order-1 flex flex-col gap-3">
         <h2 class="font-bold text-center text-3xl text-gray-800">Our Founding Support</h2>
-        <div class="grid grid-cols-3 md:grid-cols-3 gap-6 mt-5 pr-0 lg:pr-16 sponsors-grid">
+        <div class="grid grid-cols-3 md:grid-cols-3 gap-6 mt-5 sponsors-grid">
           {foundingSponsors.map(sponsor => (
             <a href={sponsor.data.url} target="_blank" rel="noopener noreferrer" class="block">
               <div class="relative w-full aspect-square">
@@ -144,30 +144,11 @@ const sponsorPlan = {
       </div>
 
       <!-- Sponsor Us Tile -->
-      <div class="order-2 md:order-1 md:mb-8 max-w-md mx-auto">
+      <div class="order-2 md:order-1 mt-12 md:mb-8 max-w-md mx-auto">
         <PricingCard plan={sponsorPlan} />
       </div>
     </div>
-    
-<!-- Non-Founding Sponsors Section -->
-<div class="grid gap-6 mx-auto max-w-6xl mt-20 mb-20 px-4 lg:px-0">
-  <div class="flex flex-col gap-3">
-    <h2 class="font-bold text-center text-3xl text-gray-800 mb-4">Become a New Sponsor</h2>
-    <div class="non-founding-sponsors-grid">
-      {newSponsors.map(sponsor => (
-        <a href={sponsor.data.url} target="_blank" rel="noopener noreferrer" class="block">
-          <div class="relative w-full aspect-square">
-            <img src={sponsor.data.avatar?.src || '/default-event-image.webp'}
-                loading="eager"
-                alt={sponsor.data.avatar.alt || 'Sponsor Image'}
-                class="w-full h-full rounded bg-white object-contain aspect-square smaller-sponsor-logo" />
-          </div>
-        </a>
-      ))}
-    </div>
-  </div>
-</div>
-
+  
     <!-- Donate to The Space Button -->
     <div class="flex justify-center mt-0 mb-4">
       <Link

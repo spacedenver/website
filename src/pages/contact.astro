@@ -1,8 +1,8 @@
 ---
-import Contactform from "@components/contactform.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
+import Button from "@components/ui/button.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -13,12 +13,13 @@ import { Icon } from "astro-icon/components";
       <Fragment slot="desc">Get in touch with us!</Fragment>
     </Sectionhead>
 
-    <div class="grid contact-grid gap-10 mx-auto max-w-4xl mt-16 mb-20">
+    <div class="grid contact-grid gap-10 mx-auto max-w-4xl mt-12 mb-20">
+      <!-- Contact card with location and links -->
       <div class="contact-card bg-gradient border-4 border-[#ffffff] rounded-lg p-6 transition-transform duration-500 ease hover:transform hover:translate-y-1">
         <h2 class="font-medium text-2xl text-white">Contact The Space</h2>
         <p class="text-lg leading-relaxed text-white mt-3">
-          Interested in becoming a member or supporting us? Want to join our public newsletter? Have any questions? Suggestions for an event? Let us
-          know. Fill out the form or contact us below!
+          Have questions for The Space? Interested in supporting or partnering with us? Suggestions for an event or want to rent the venue? Let us
+          know. Send us an email or get in touch via the links below!
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-white">
@@ -28,7 +29,7 @@ import { Icon } from "astro-icon/components";
               C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24
               C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z" />
             </svg>
-            <span>Denver, CO</span>
+            <a href="https://maps.app.goo.gl/pGfZqaGrwPdo39Px6" target="_blank" rel="noopener noreferrer">3704 N Franklin St. Denver, CO</a>
           </div>
           <div class="flex items-center mt-2 space-x-2 text-white">
             <!-- SVG Icon for Email -->
@@ -53,8 +54,27 @@ import { Icon } from "astro-icon/components";
           </div>
         </div>
       </div>
-      <div>
-        <Contactform />
+
+      <!-- Newsletter Subscription card with gradient background -->
+      <div class="contact-card bg-gradient border-4 border-[#ffffff] rounded-lg p-6 transition-transform duration-500 ease hover:transform hover:translate-y-1">
+        <h2 class="font-medium text-2xl text-white mb-3">Subscribe to Our Newsletter</h2>
+        <form method="post" action="https://listmonk.denver.space/subscription/form" class="listmonk-form text-center">
+          <input type="hidden" name="nonce" />
+          <div class="mb-4">
+            <input class="w-full p-2 bg-white text-black border-b border-gray-400 rounded" type="email" name="email" required placeholder="E-mail" />
+          </div>
+          <div class="mb-4">
+            <input class="w-full p-2 bg-white text-black border-b border-gray-400 rounded" type="text" name="name" placeholder="Name / Nym" />
+          </div>
+          <div class="mb-4">
+            <input id="63d75" type="checkbox" name="l" checked value="63d756c7-cb89-49fd-8cc5-f3686cae81dd" />
+            <label for="63d75" class="text-white">The Space Public Newsletter</label>
+            <p class="text-white text-sm mt-3 mb-6">Stay in the loop via our public newsletter. Updates on events, media, membership, and more.</p>
+          </div>
+          <div>
+            <Button style="primary" size="lg" block>Subscribe</Button>
+          </div>
+        </form>
       </div>
     </div>
   </Container>
@@ -62,7 +82,7 @@ import { Icon } from "astro-icon/components";
 
 <style>
   .bg-gradient {
-    background: linear-gradient(135deg,#E51F5D, #E51F5D, #F68830, #F5D54C, #FDE3B7);
+    background: linear-gradient(135deg, #E51F5D, #E51F5D, #F68830, #F5D54C, #FDE3B7);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease;
   }
@@ -72,7 +92,7 @@ import { Icon } from "astro-icon/components";
   }
 
   .contact-card {
-    background: linear-gradient(135deg,#E51F5D, #E51F5D, #F68830, #F5D54C, #FDE3B7);
+    background: linear-gradient(135deg, #E51F5D, #E51F5D, #F68830, #F5D54C, #FDE3B7);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease;
   }
@@ -96,5 +116,20 @@ import { Icon } from "astro-icon/components";
     .contact-grid {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  .listmonk-form input {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .listmonk-form input:hover {
+    background-color: #f0f0f0;
+  }
+
+  .listmonk-form button:hover {
+    background-color: gray;
   }
 </style>
