@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-
 ---
 
 <Layout title="Events">
@@ -16,22 +15,14 @@ import Sectionhead from "@components/sectionhead.astro";
     </Sectionhead>
 
     <div class="flex justify-center mt-12">
-      <a data-label="The Space Soir&#233;e &#38; Launch Week Activities" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="https://pay.zaprite.com/pl_1OHs6TagTx" target="_blank" rel="no referrer noopener">Purchase Tickets to The Space Launch Week</a>
+      <a data-label="Public Event Calendar Sign Up" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="https://lu.ma/the-space-public-calendar" target="_blank" rel="no referrer noopener">Subscribe to The Space's Public Event Calendar</a>
     </div>
 
-    <!-- Responsive container for the iframes -->
-    <div class="iframe-container mt-12 mb-20">
-      <iframe
-        src="https://nextcloud.denver.space/apps/calendar/embed/ioCC4mJi9dSsAkDC"
-        class="calendar-iframe large-screen-65"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-      ></iframe>
-      
+    <!-- Responsive container for the iframe with padding on larger screens -->
+    <div class="iframe-container mt-12 mb-20 lg:px-16">
       <iframe
         src="https://lu.ma/embed/calendar/cal-UDDTjyTDkwIZTOm/events"
-        class="calendar-iframe large-screen-35"
+        class="calendar-iframe"
         allowfullscreen=""
         aria-hidden="false"
         tabindex="0"
@@ -41,38 +32,19 @@ import Sectionhead from "@components/sectionhead.astro";
 </Layout>
 
 <style>
-  /* Base styles for iframes */
-  .iframe-container {
-    display: flex;
-    flex-direction: column;
-  }
-
+  /* Base styles for the iframe */
   .calendar-iframe {
     width: 100%;
     height: 90vh;
     border: 1px solid #bfcbda88;
     border-radius: 4px;
-    margin-bottom: 20px;
   }
 
-  /* Side by side on larger screens with proportional widths */
-  @media (min-width: 768px) and (orientation: landscape) {
+  /* Padding on the left and right for larger screens */
+  @media (min-width: 1024px) {
     .iframe-container {
-      flex-direction: row;
-      gap: 20px;
-    }
-
-    .large-screen-65 {
-      width: 65%;
-    }
-
-    .large-screen-35 {
-      width: 35%;
-    }
-
-    .calendar-iframe {
-      height: 80vh; /* Adjust height as needed for landscape view */
-      margin-bottom: 0;
+      padding-left: 180px;
+      padding-right: 180px;
     }
   }
 </style>
