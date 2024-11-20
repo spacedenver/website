@@ -6,7 +6,7 @@ const { plan } = Astro.props;
 const isComingSoon = plan.name !== "Public" && plan.name !== "Social Membership" && plan.name !== "Co-Working Membership" && plan.name !== "Become a Sponsor";
 const isMainOption = plan.name === "Social Membership" || plan.name === "Co-Working Membership";
 const isSponsorCard = plan.name === "Become a Sponsor";
-const isLowerTier = ["Public", "Day Pass", "Add-Ons"].includes(plan.name);
+const isLowerTier = ["Public", "Day Pass", "Remote Supporter"].includes(plan.name);
 ---
 
 <div class="flex flex-col h-full min-h-full">
