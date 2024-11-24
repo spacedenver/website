@@ -15,9 +15,6 @@ export const POST = async ({ request }) => {
     console.log('API endpoint hit: /api/subscribe');
     const response = await fetch('http://listmonk.dspace:9000/subscription/form', {
       method: 'POST',
-      headers: {
-        'Authorization': 'Basic ' + Buffer.from('spacedenver024:834ieri34fker34xmlweWF82X').toString('base64'),
-      },
       body: formData
     });
 
@@ -37,7 +34,11 @@ export const POST = async ({ request }) => {
     });
 
   } catch (error) {
-    console.error('Server error:', error);
+    // Don't log TypeError instances
+    if (!(error instanceof TypeError)) {
+      console.error('Server error:', error);
+    }
+    
     return new Response(JSON.stringify({ 
       error: 'Internal server error' 
     }), { 
