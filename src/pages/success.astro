@@ -1,0 +1,23 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+import Button from "@components/ui/button.astro";
+---
+
+<Layout title="Subscription Successful">
+  <Container>
+    <div class="flex flex-col items-center justify-center min-h-[70vh] text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mb-8">
+        Thank you for subscribing!
+      </h1>
+      <p class="text-lg mb-8">
+        You've been successfully added to our newsletter.
+      </p>
+      <div>
+        <a href="https://denver.space" class="inline-block">
+          <Button size="lg" style="primary">Return to denver.space</Button>
+        </a>
+      </div>
+    </div>
+  </Container>
+</Layout> 
