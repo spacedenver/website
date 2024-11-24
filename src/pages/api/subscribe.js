@@ -1,8 +1,18 @@
 export const POST = async ({ request }) => {
-  console.log('API endpoint hit: /api/subscribe');
   try {
     const formData = await request.formData();
     
+    const honeypot = formData.get('website_url');
+    if (honeypot) {
+      return new Response(null, {
+        status: 302,
+        headers: {
+          'Location': '/success'
+        }
+      });
+    }
+    
+    console.log('API endpoint hit: /api/subscribe');
     const response = await fetch('http://listmonk.dspace:9000/subscription/form', {
       method: 'POST',
       headers: {
