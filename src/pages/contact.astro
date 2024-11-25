@@ -63,8 +63,10 @@ import { Icon } from "astro-icon/components";
           action="/api/subscribe" 
           class="listmonk-form text-center"
           enctype="multipart/form-data"
+          onsubmit="return submitForm(event)"
         >
           <input type="hidden" name="nonce" />
+          <div class="h-captcha mb-4" data-sitekey={import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY} data-required="true"></div>
           <div class="mb-4">
             <input class="w-full p-2 bg-white text-black border-b border-gray-400 rounded" type="email" name="email" required placeholder="E-mail" />
           </div>
@@ -145,6 +147,12 @@ import { Icon } from "astro-icon/components";
     console.log('Form submission started...');
     event.preventDefault();
     
+    const hcaptchaResponse = hcaptcha.getResponse();
+    if (!hcaptchaResponse) {
+      alert('Please complete the captcha');
+      return false;
+    }
+    
     const form = event.target;
     const formData = new FormData(form);
 
@@ -155,13 +163,17 @@ import { Icon } from "astro-icon/components";
         body: formData
       });
       
-      const result = await response.json();
+      if (response.redirected) {
+        // Server is redirecting us to /success
+        window.location.href = response.url;
+        return;
+      }
       
-      if (result.success) {
-        console.log('Subscription successful!');
-        form.reset();
-      } else {
+      // Only try to parse JSON if we didn't get redirected
+      const result = await response.json();
+      if (!result.success) {
         console.error('Subscription failed:', result.error);
+        alert('Subscription failed: ' + (result.error || 'Unknown error'));
       }
     } catch (error) {
       console.error('Error during submission:', error);
@@ -170,3 +182,5 @@ import { Icon } from "astro-icon/components";
     return false;
   }
 </script>
+
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
