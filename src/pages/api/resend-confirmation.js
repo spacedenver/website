@@ -11,7 +11,17 @@ export const POST = async ({ request }) => {
       });
     }
 
-    const response = await fetch('http://listmonk.dspace:9000/api/subscribers/query/optin', {
+    const listmonk_domain_url = import.meta.env.LISTMONK_DOMAIN_URL;
+    if (!listmonk_domain_url) {
+      console.error('LISTMONK_DOMAIN_URL environment variable is not set');
+      return new Response(JSON.stringify({ 
+        error: 'Server configuration error' 
+      }), { 
+        status: 500 
+      });
+    }
+
+    const response = await fetch(`${listmonk_domain_url}/api/subscribers/query/optin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,10 +43,15 @@ export const POST = async ({ request }) => {
 
   } catch (error) {
     if (!(error instanceof TypeError)) {
-      console.error('Resend confirmation error:', error);
+      console.error('Resend confirmation error details:', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+      });
     }
     return new Response(JSON.stringify({ 
-      error: 'Failed to resend confirmation email' 
+      error: 'Failed to resend confirmation email',
+      details: error.message  // Optionally add this for debugging, remove in production
     }), { 
       status: 500 
     });
