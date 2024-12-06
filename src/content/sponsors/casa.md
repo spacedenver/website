@@ -2,7 +2,7 @@
 draft: false
 name: "Learn More"
 title: "Casa"
-url: "https://casa.io"
+url: "https://casa.io/?ref=thespace"
 avatar: {
     src: "/assets/sponsors/casa.webp",
     alt: "Casa"
