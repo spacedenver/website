@@ -12,8 +12,18 @@ export const POST = async ({ request }) => {
       });
     }
     
+    const listmonk_domain_url = import.meta.env.LISTMONK_DOMAIN_URL;
+    if (!listmonk_domain_url) {
+      console.error('LISTMONK_DOMAIN_URL environment variable is not set');
+      return new Response(JSON.stringify({ 
+        error: 'Server configuration error' 
+      }), { 
+        status: 500 
+      });
+    }
+    
     console.log('API endpoint hit: /api/subscribe');
-    const response = await fetch('http://listmonk.dspace:9000/subscription/form', {
+    const response = await fetch(`${listmonk_domain_url}/subscription/form`, {
       method: 'POST',
       body: formData
     });
@@ -26,6 +36,14 @@ export const POST = async ({ request }) => {
         }
       });
     }
+
+    // Get the error details from the response
+    const errorData = await response.json().catch(() => null);
+    console.error('Subscription failed:', {
+      status: response.status,
+      statusText: response.statusText,
+      error: errorData
+    });
 
     return new Response(JSON.stringify({ 
       error: 'Subscription failed' 
