@@ -1,0 +1,157 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="Heatpunk Summit">
+  <Container class="w-full">
+    <Sectionhead>
+      <Fragment slot="title">Undermine Heatpunk Summit 2025</Fragment>
+      <Fragment slot="desc">
+        Shaping the Future of Electric Heating and Bitcoin Mining
+      </Fragment>
+    </Sectionhead>
+
+    <!-- Purchase Tickets -->
+    <div class="flex justify-center mt-12">
+      <a data-label="Heatpunk Summit 2025" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="https://pay.zaprite.com/pl_NtmMa68MUE" target="_blank" rel="no referrer noopener">Purchase Tickets to the Inaugural Heatpunk Summit</a>
+    </div>
+
+    <!-- Heatpunk Image -->
+    <div class="flex justify-center mt-10">
+      <img src="/assets/events/heatpunk_logo_transparent.webp" alt="Heatpunk Summit Placeholder" class="rounded-lg w-full md:w-3/4 lg:w-1/2" />
+    </div>
+
+    <!-- Description Section -->
+    <div class="mt-16">
+      <h2 class="text-3xl font-bold">Overview</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <p class="text-lg mt-4 text-left md:text-justify text-black px-4 md:px-4 lg:px-10">
+          The Undermine Heatpunk Summit is a groundbreaking two-day conference dedicated to the rapidly emerging field of hashrate heating, harnessing Bitcoin miners to power electric heating infrastructure. 
+          We're undermining the status-quo. Mining doesn't have to be centralized in pub-co mega facilities or massive mining pools - and home hashing doesn't have to be exclusive to the ideologically motivated. Instead, we can bring mining to all via heating appliances.  
+        </p>
+        <p class="text-lg mt-4 text-left md:text-justify text-black px-4 md:px-4 lg:px-10">
+          As the Bitcoin mining industry undergoes a transformative phase, the potential to unlock additional utility through heating has become clear.
+          This summit brings together the brightest minds and hands-on builders, tinkerers, plebs, engineers, tradespeople, contractors, and companies to collaborate on advancing this innovative technology. 
+          By leveraging Bitcoin miners for heating, we can decentralize network hashrate, lower utility costs, and accelerate Bitcoin adoption as a neutral monetary asset.
+        </p>
+        <p class="text-lg mt-4 text-left md:text-justify text-black px-4 md:px-4 lg:px-10">
+          Join us in shaping the future of energy and Bitcoin at the forefront of this exciting new industry.
+        </p>
+      </ul>
+    </div>
+
+    <!-- Date Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Date and Time</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Friday, February 21 - Saturday, February 22, 2025</li>
+        <li>Summit activities will start late Friday morning on the 21st, around 11 am. Feel free to arrive earlier for coffee and breakfast.</li>
+        <li>We'll conclude a full day of summit activities on Saturday evening - followed by a group dinner.</li>
+      </ul>
+    </div>
+
+    <!-- Location Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Location</h2>
+      <p class="mt-4">
+        The Space - Denver's Bitcoin hub.
+      </p>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Easily accessible from Denver International Airport via Train (no rental car required).</li>
+        <li>Ample accommodations nearby including hotels, restaurants, and bars within walking distance.</li>
+        <li>Located in the heart of Denver's RiNo (River North) district. Close to I-70 for easy access to the ski resorts.</li>
+      </ul>
+
+      <!-- Venue Images Grid -->
+      <div class="grid-container mt-10">
+        <img src="/assets/venue/3700Franklin_Back.webp" alt="Heatpunk Summit Venue" class="rounded-lg shadow-md" />
+        <img src="/assets/venue/3700Franklin_Front.webp" alt="Heatpunk Summit Venue" class="rounded-lg shadow-md" />
+        <img src="/assets/venue/VenueEvent_deck_006.png" alt="Heatpunk Summit Venue" class="rounded-lg shadow-md" />
+        <img src="/assets/venue/VenueEvent_deck_007.png" alt="Heatpunk Summit Venue" class="rounded-lg shadow-md" />
+        <img src="/assets/venue/VenueEvent_deck_014.png" alt="Heatpunk Summit Venue" class="rounded-lg shadow-md" />
+        <img src="/assets/venue/VenueEvent_deck_016.png" alt="Heatpunk Summit Venue" class="rounded-lg shadow-md" />
+      </div>
+    </div>
+
+    <!-- Schedule Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Schedule</h2>
+      <p class="mt-4">
+        The detailed event schedule is coming soon. In general, content will cover the following:
+      </p>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Keynote presentations</li>
+        <li>Panel discussions with industry leaders</li>
+        <li>Collaborative roundtables, problem solving workshops and industry focus sessions</li>
+        <li>Hands-on with hashrate heating hardware</li>
+        <li>Plenty of time for networking and socializing</li>
+      </ul>
+    </div>
+
+    <!-- Speakers Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Attendees</h2>
+      <p class="mt-4">
+        We want all the key players that are making hashrate heating a reality in attendance
+      </p>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Bitcoin Miners</li>
+        <li>Firmware Developers</li>
+        <li>Plebs</li>
+        <li>Hashrate Heating Founders</li>
+        <li>Engineers</li>
+        <li>Contractors</li>
+        <li>Tradesmen</li>
+        <li>Those with Passion</li>
+      </ul>
+    </div>
+
+    <!-- Get Involved Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Want to be more involved?</h2>
+      <p class="mt-4">
+        Are you interested in being a part of the first Heatpunk Summit? Have questions? Want to join our hashrate heating telegram group? Reach out below.
+      </p>
+      <div class="flex justify-center mt-12 mb-12">
+        <a data-label="Contact Us" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="mailto:tks@tylerstevens.me" target="_blank" rel="no referrer noopener">Contact the Event Coordinator</a>
+      </div>
+    </div>
+
+  </Container>
+</Layout>
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-gap: 16px;
+  }
+
+  /* For large screens: 3 columns, 2 rows */
+  @media (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* For medium screens: 2 columns, 3 rows */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* For small screens: 1 column, 6 rows */
+  @media (max-width: 767px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+</style>
