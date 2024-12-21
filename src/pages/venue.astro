@@ -62,13 +62,14 @@ const values = [
       </Fragment>
     </Sectionhead>
 
-    <!-- Venue Images -->
-    <section class="flex flex-col mt-20 mb-20 items-center lg:space-y-7">
-      <img src="/assets/venue/3700Franklin_Back.webp" alt="The Space Building Back" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
-    </section>
-    <section class="flex flex-col mt-20 mb-20 items-center lg:space-y-7">
-      <img src="/assets/venue/3700Franklin_Front.webp" alt="The Space Building Front" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
-    </section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+  <img src="/assets/venue/3700Franklin_Back.webp" alt="Heatpunk Summit Venue" class="venue-image" />
+  <img src="/assets/venue/3700Franklin_Front.webp" alt="Heatpunk Summit Venue" class="venue-image" />
+  <img src="/assets/venue/VenueEvent_deck_006.png" alt="Heatpunk Summit Venue" class="venue-image" />
+  <img src="/assets/venue/VenueEvent_deck_007.png" alt="Heatpunk Summit Venue" class="venue-image" />
+  <img src="/assets/venue/VenueEvent_deck_014.png" alt="Heatpunk Summit Venue" class="venue-image" />
+  <img src="/assets/venue/VenueEvent_deck_016.png" alt="Heatpunk Summit Venue" class="venue-image" />
+</div>
 
     <!-- Amenities -->
     <div class="px-0">
@@ -93,13 +94,15 @@ const values = [
 
     <!-- More Venue Images -->
     <section class="flex flex-col mt-20 mb-20 items-center lg:space-y-7">
-      <img src="/assets/venue/3700_event.webp" alt="The Space Lounge" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
-    </section>
-    <section class="flex flex-col mt-20 mb-20 items-center lg:space-y-7">
-      <img src="/assets/venue/Sponsor_wall.webp" alt="The Space Founding Members and Sponsors" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
-    </section>
-    <section class="flex flex-col mt-20 mb-20 items-center lg:space-y-7">
-      <img src="/assets/venue/backyard_event.webp" alt="The Space Backyard Event" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
+      <img src="/assets/venue/location_map.webp" alt="The Space Lounge" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
     </section>
   </Container>
 </Layout>
+
+<style>
+    .venue-image {
+  object-fit: cover; /* Maintain aspect ratio and fill the space */
+  border-radius: 10px; /* Optional: keep the rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+  }
+</style>
