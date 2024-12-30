@@ -1,69 +1,45 @@
-import type { APIRoute } from 'astro';
+import { defineConfig } from 'astro/config';
+
+console.log('All env variables:', import.meta.env);
 
 const space_services_api_url = import.meta.env.SPACE_SERVICES_API_URL;
 
-interface MembershipApplication {
-
-  name: string;
-
-  // Personal Information
-  preferred_contact_method: 'email' | 'telegram' | 'x' | 'nostr';
-
-  // Goals and Interests
-  primary_goals: string[];  // ['networking', 'workspace', 'events', 'learning', 'collaboration', 'other']
-  primary_services: string[];  // ['coworking', 'dedicated_space', 'events', 'community', 'amenities', 'other']
-  events: string[];  // ['social', 'technical', 'educational', 'bitcoin_only', 'bitcoin_adjacent', 'other']
-  other_interests?: string;
-
-  // Values and Bitcoin
-  core_values: string[];  // Exactly 3 values from the core values list
-  bitcoin_competence: 'boating_accident' | 'continuing_education' | 'open_minded' | 'wrong_place';
-
-  // Additional Information
-  contributions?: string;
-  existing_bitcoin_projects?: string;
-  additional_info?: string;
-
-  // Membership Details
-  membership_option: 'social' | 'coworking';
-
-  // Referral Information
-  space_awareness: string[];  // ['word_of_mouth', 'social_media', 'online_search', 'event', 'advertisement', 'other']
-  referral?: string;
-
-  // Additional Details
-  shirt_size?: 'X' | 'S' | 'M' | 'L' | 'XL' | 'XXL';
-  
-  // Terms and Consent
-  consent: boolean;
-
-  /** email */
-  email: string;
-
-  /** telegram */
-  telegram?: string;
-
-  /** X/Twitter */
-  x_twitter?: string;
-
-  /** nostr */
-  nostr?: string;
+if (!space_services_api_url) {
+  console.error('SPACE_SERVICES_API_URL environment variable is not set');
+  throw new Error('SPACE_SERVICES_API_URL environment variable is not set');
 }
 
-export const POST: APIRoute = async ({ request }) => {
-  
-  if (!space_services_api_url) {
-    console.error('SPACE_SERVICES_API_URL environment variable is not set');
-    return new Response(JSON.stringify({ 
-      error: 'Server configuration error' 
-    }), { 
-      status: 500 
-    });
-  }
+console.log('SPACE_SERVICES_API_URL configured:', space_services_api_url);
 
+// Interface removed and converted to JSDoc for documentation
+/**
+ * @typedef {Object} MembershipApplication
+ * @property {string} name
+ * @property {'email' | 'telegram' | 'x' | 'nostr'} preferred_contact_method
+ * @property {string[]} primary_goals - ['networking', 'workspace', 'events', 'learning', 'collaboration', 'other']
+ * @property {string[]} primary_services - ['coworking', 'dedicated_space', 'events', 'community', 'amenities', 'other']
+ * @property {string[]} events - ['social', 'technical', 'educational', 'bitcoin_only', 'bitcoin_adjacent', 'other']
+ * @property {string} [other_interests]
+ * @property {string[]} core_values - Exactly 3 values from the core values list
+ * @property {'boating_accident' | 'continuing_education' | 'open_minded' | 'wrong_place'} bitcoin_competence
+ * @property {string} [contributions]
+ * @property {string} [existing_bitcoin_projects]
+ * @property {string} [additional_info]
+ * @property {'social' | 'coworking'} membership_option
+ * @property {string[]} space_awareness - ['word_of_mouth', 'social_media', 'online_search', 'event', 'advertisement', 'other']
+ * @property {string} [referral]
+ * @property {'X' | 'S' | 'M' | 'L' | 'XL' | 'XXL'} [shirt_size]
+ * @property {boolean} consent
+ * @property {string} email
+ * @property {string} [telegram]
+ * @property {string} [x_twitter]
+ * @property {string} [nostr]
+ */
+
+export const POST = async ({ request }) => {
   try {
     const data = await request.json();
-    const application = data as MembershipApplication;
+    const application = data;
 
     // Validate required fields
     if (!application.name ||
@@ -88,7 +64,9 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    // Validate values array has exactly 3 items
+    // Rest of the code remains the same
+    // ... existing validation and API call logic ...
+
     if (application.core_values.length !== 3) {
       return new Response(JSON.stringify({
         success: false,
@@ -101,12 +79,10 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    // Log the application data
     console.log('Submitting membership application:', 
       JSON.stringify(application, null, 2)
     );
 
-    // Send application to Space Services API
     const response = await fetch(`${space_services_api_url}/api/member-app`, {
       method: 'POST',
       headers: {
@@ -116,7 +92,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
     if (!response.ok) {
-      const errorData = await response.text();  // Read the response body once as text
+      const errorData = await response.text();
 
       return new Response(JSON.stringify({
         success: false,
@@ -155,4 +131,4 @@ export const POST: APIRoute = async ({ request }) => {
       }
     });
   }
-}; 
+};
