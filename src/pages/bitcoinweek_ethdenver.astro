@@ -5,118 +5,86 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 ---
 
-<Layout title="Bitcoin Week at ETH Denver">
+<Layout title="Bitcoin Week at The Space">
   <Container class="w-full">
     <Sectionhead>
-      <Fragment slot="title">Bitcoin Week at ETH Denver, 2025</Fragment>
-      <Fragment slot="desc">
-        Signal in the Noise
-      </Fragment>
+      <Fragment slot="title">Bitcoin Week at The Space</Fragment>
+      <Fragment slot="desc">Signal in the Noise</Fragment>
     </Sectionhead>
 
-    <!-- Contact Us -->
-    <div class="flex justify-center mt-12">
-      <a data-label="Bitcoin Week at ETH Denver" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="mailto:contact@denver.space" target="_blank" rel="no referrer noopener">Reach Out to Be a Part of Bitcoin Week 2025</a>
-    </div>
-
-    <!-- Bitcoin Week Flyer -->
-  <div class="flex justify-center mt-10">
-    <img 
-        src="/assets/events/bitcoinweek2025/BitcoinWeekEthDenver2025.webp" 
-        alt="Bitcoin Week Flyer" 
-        class="rounded-lg w-full max-w-[800px] md:w-3/4 lg:w-2/3" 
-    />
-  </div>
-
-    <!-- Overview Section -->
-    <div class="mt-16">
-      <h2 class="text-3xl font-bold">Overview</h2>
-      <ul class="list-disc pl-5 mt-4">
-        <p class="text-lg mt-4 text-left md:text-justify text-black px-4 md:px-4 lg:px-10">
-          During one of the world’s largest crypto gatherings, ETH Denver, Bitcoin Week at The Space will showcase the incredible potential of Bitcoin as a platform for innovation. 
-          While ETH Denver draws global attention, especially from Bitcoin scaling companies working on Layer 2s, Layer 3s, smart contracts, and new technologies like ordinals and runes, 
-          The Space will be the ultimate destination for Bitcoiners and Bitcoin-curious attendees.
-        </p>
-        <p class="text-lg mt-4 text-left md:text-justify text-black px-4 md:px-4 lg:px-10">
-          This exciting week-long series of events will include high-signal presentations, panel discussions, debates, networking sessions, social gatherings, cocktail hours, and even the possibility of a hackathon. 
-          Our mission is to highlight how Bitcoin serves as the ideal foundation for developers and innovators, demonstrating that everything you can imagine building on other networks can be built better on Bitcoin.
-        </p>
-        <p class="text-lg mt-4 text-left md:text-justify text-black px-4 md:px-4 lg:px-10">
-          We’re actively building out the schedule and want your company to be a part of it! Whether it’s hosting an event, leading a discussion, or showcasing cutting-edge Bitcoin tech, this is your opportunity to tap into a vibrant and talented audience of developers, thinkers, and builders. 
-          Our venue is ready to deliver an unforgettable experience tailored to your needs.
-        </p>
-      </ul>
-    </div>
-
-    <!-- Date Section -->
-    <div class="mt-10">
-      <h2 class="text-3xl font-bold">Date and Time</h2>
-      <ul class="list-disc pl-5 mt-4">
-        <li>Wednesday, February 26 - Saturday, March 1, 2025</li>
-        <li>Event week schedule is still being formalized. Stay tuned for more details</li>
-      </ul>
-    </div>
-
-    <!-- Location Section -->
-    <div class="mt-10">
-      <h2 class="text-3xl font-bold">Location</h2>
-      <p class="mt-4">
-        The Space - Denver's Bitcoin hub.
+    <!-- Overview -->
+    <div class="mt-12 text-center">
+      <p class="text-lg text-gray-700 px-4 md:px-10">
+        As ETH Denver fills the city with noise, The Space stands as a beacon of signal. 
+        We’ve curated a Bitcoin-only lineup of high-signal events, networking, and discussions. 
+        Whether you're a builder, investor, or simply Bitcoin-curious, this is where you need to be.
       </p>
-      <ul class="list-disc pl-5 mt-4">
-        <li>Easily accessible from Denver International Airport via Train (no rental car required).</li>
-        <li>Ample accommodations nearby including hotels, restaurants, and bars within walking distance.</li>
-        <li>Located in the heart of Denver's RiNo (River North) district. Close to I-70 for easy access to the ski resorts.</li>
-        <li>Close proximity to other ETH Denver events and activies.</li>
-      </ul>
-
-<!-- Venue Images Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-    <img src="/assets/venue/3700Franklin_Back.webp" alt="Heatpunk Summit Venue" class="venue-image" />
-    <img src="/assets/venue/3700Franklin_Front.webp" alt="Heatpunk Summit Venue" class="venue-image" />
-    <img src="/assets/venue/VenueEvent_deck_006.png" alt="Heatpunk Summit Venue" class="venue-image" />
-    <img src="/assets/venue/VenueEvent_deck_007.png" alt="Heatpunk Summit Venue" class="venue-image" />
-    <img src="/assets/venue/VenueEvent_deck_014.png" alt="Heatpunk Summit Venue" class="venue-image" />
-    <img src="/assets/venue/VenueEvent_deck_016.png" alt="Heatpunk Summit Venue" class="venue-image" />
-  </div>
-
-    <!-- Schedule Section -->
-    <div class="mt-10">
-      <h2 class="text-3xl font-bold">Schedule</h2>
-      <p class="mt-4">
-        The detailed event schedule is coming soon. In general, content will cover the following:
-      </p>
-      <ul class="list-disc pl-5 mt-4">
-        <li>Keynote presentations</li>
-        <li>Panel discussions and debates with industry leaders and developers</li>
-        <li>Collaborative roundtables, problem solving workshops and industry focus sessions</li>
-        <li>Plenty of time for networking and socializing</li>
-      </ul>
     </div>
 
-    <!-- Speakers Section -->
-    <div class="mt-10">
-      <h2 class="text-3xl font-bold">Attendees</h2>
-      <p class="mt-4">
-        We want all the key players Building on Bitcoin in attendance. Here are some of our confirmed attendees.
-      </p>
-      <ul class="list-disc pl-5 mt-4">
-        <li>Epoch VC</li>
-        <li>Bitcoin Layers</li>
-      </ul>
-    </div>
+    <!-- Events Schedule -->
+    <div class="mt-12">
+      <h2 class="text-3xl font-bold text-center">Schedule</h2>
+      <p class="text-lg text-gray-700 text-center mt-4">RSVP for each event to secure your spot!</p>
 
-    <!-- Get Involved Section -->
-    <div class="mt-10">
-      <h2 class="text-3xl font-bold">Want to get involved?</h2>
-      <p class="mt-4">
-        Are you interested in being a part of the first Bitcoin Week at ETH Denver? Have questions? Reach out below.
-      </p>
-      <div class="flex justify-center mt-12 mb-12">
-        <a data-label="Contact Us" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="mailto:contact@denver.space" target="_blank" rel="no referrer noopener">Contact the Event Coordinator</a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <!-- Bitcoin and Beer -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">Bitcoin and Beer 🍻</h3>
+          <p class="text-gray-700 mt-2"><strong>📅 When:</strong> 02/25, 6PM - 8PM</p>
+          <p class="text-gray-700"><strong>🏠 Host:</strong> The Space</p>
+          <p class="text-gray-700 mt-2">
+            Social event open to the public. A chance for out-of-town guests to experience The Space.
+          </p>
+          <a href="https://lu.ma/3e6lg9g6" class="text-blue-600 mt-2 block">RSVP Here →</a>
+        </div>
+
+        <!-- PARTY-to-Quantum-Resistant-Hash -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">PARTY-to-Quantum-Resistant-Hash! ⚡</h3>
+          <p class="text-gray-700 mt-2"><strong>📅 When:</strong> 02/26, 4:30PM - 8PM</p>
+          <p class="text-gray-700"><strong>🏠 Host:</strong> Anduro</p>
+          <p class="text-gray-700 mt-2">
+            Food & drinks with Anduro and Hunter Beast (BIP 360 author). Learn about securing Bitcoin against quantum threats.
+          </p>
+          <a href="https://lu.ma/h7lcm8xg?tk=sUgTYY" class="text-blue-600 mt-2 block">RSVP Here →</a>
+        </div>
+
+        <!-- Make Bitcoin Money Again -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">Make Bitcoin Money Again 💰</h3>
+          <p class="text-gray-700 mt-2"><strong>📅 When:</strong> 02/27, 10AM - 8PM</p>
+          <p class="text-gray-700"><strong>🏠 Host:</strong> Lightspark</p>
+          <p class="text-gray-700 mt-2">
+            A hackathon for Bitcoin developers to push the boundaries of **money apps**. Meet the Lightspark team and build the future of Bitcoin payments.
+          </p>
+          <a href="https://lu.ma/74c6mkek" class="text-blue-600 mt-2 block">RSVP Here →</a>
+        </div>
+
+        <!-- Citrea Developer Meetup -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">Citrea Developer Meetup 🔍</h3>
+          <p class="text-gray-700 mt-2"><strong>📅 When:</strong> 02/28, 5PM - 9PM</p>
+          <p class="text-gray-700"><strong>🏠 Host:</strong> Citrea</p>
+          <p class="text-gray-700 mt-2">
+            Explore how **zero-knowledge proofs** unlock Bitcoin’s blockspace for privacy, scalability, and real-world applications.
+          </p>
+          <a href="https://lu.ma/3bxjle94" class="text-blue-600 mt-2 block">RSVP Here →</a>
+        </div>
       </div>
     </div>
 
+    <!-- Get Involved -->
+    <div class="mt-16 text-center">
+      <h2 class="text-3xl font-bold">Want to Support The Space?</h2>
+      <p class="text-lg text-gray-700 mt-4">
+        The Space is community-run. We don’t ask for much, but if you’d like to support our mission of pushing Bitcoin adoption and fostering high-signal events, reach out below.
+      </p>
+      <div class="flex justify-center mt-8 mb-12">
+        <a data-label="Support The Space" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:12px 24px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="mailto:contact@denver.space" target="_blank" rel="noopener noreferrer">
+          Contact Us
+        </a>
+      </div>
+    </div>
   </Container>
 </Layout>
 
@@ -126,21 +94,17 @@ import Sectionhead from "@components/sectionhead.astro";
     grid-gap: 16px;
   }
 
-  /* For large screens: 3 columns, 2 rows */
+  /* Responsive layout */
   @media (min-width: 1024px) {
     .grid-container {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
-  /* For medium screens: 2 columns, 3 rows */
   @media (min-width: 768px) and (max-width: 1023px) {
     .grid-container {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
-  /* For small screens: 1 column, 6 rows */
   @media (max-width: 767px) {
     .grid-container {
       grid-template-columns: 1fr;
@@ -152,9 +116,11 @@ import Sectionhead from "@components/sectionhead.astro";
     height: auto;
   }
 
-  .venue-image {
-  object-fit: cover; /* Maintain aspect ratio and fill the space */
-  border-radius: 10px; /* Optional: keep the rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+  .rounded-lg {
+    border-radius: 10px;
+  }
+
+  .shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 </style>
