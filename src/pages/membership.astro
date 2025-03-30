@@ -6,7 +6,7 @@ import PricingCard from "@components/pricing.astro";
 
 const pricing = [
   {
-    name: "Social Membership",
+    name: "Social",
     price: {
       monthly: "$150/mo",
       annual: "$1800",
@@ -15,15 +15,15 @@ const pricing = [
     },
     popular: true,
     features: [
-      "Access to the building: Weekdays after 4 PM and all weekend",
-      "Co-working: 5 drop-in days per month",
-      "Bring a guest: 5 times a month",
-      "Use our workspace and creative tools",
-      "Member events: Free or discounted access",
-      "Private member channels, NOSTR verification, and more",
-      "Bitcoin & sovereign tech solutions: Cloud storage, liquidity, and more",
-      "Engage in community-driven opportunities",
-      "Be part of the first-ever member-run Bitcoin Citadel",
+    "Building Access: Weekdays after 4 PM + All Weekend",
+    "5 Drop-In Co-Working Days / Month",
+    "Bring a Guest: 5 Times / Month",
+    "Access to Workspace + Creative Tools",
+    "Private Member-Only Events",
+    "Free & Discounted Access to Ticketed Events",
+    "Sovereign Tools: NOSTR, DATUM, Cloud Storage, Liquidity & More",
+    "Community Collaboration Opportunities",
+    "Be Part of Denver’s First Member-Run Bitcoin Citadel",
     ],
     button: {
       text: "Apply for Membership",
@@ -31,7 +31,7 @@ const pricing = [
     },
   },
   {
-    name: "Co-Working Membership",
+    name: "Co-Working",
     price: {
       monthly: "$300/mo",
       annual: "$3600",
@@ -40,21 +40,56 @@ const pricing = [
     },
     popular: true,
     features: [
-      "24/7 building access",
-      "Unlimited co-working: Drop in anytime",
-      "Unlimited guest passes",
-      "Conference Room Booking",
-      "Quiet Daytime Call Space",
-      "Extensive Desk & Lounge Space",
-      "Daily Interaction with the Brightest Minds in Bitcoin",
-      "+ Social Membership Benefits & More...",
+    "Building Access: 24/7",
+    "Unlimited Co-Working",
+    "Unlimited Guest Passes",
+    "Access to Workspace + Creative Tools",
+    "Private Member-Only Events",
+    "Free & Discounted Access to Ticketed Events",
+    "Sovereign Tools: NOSTR, DATUM, Cloud Storage, Liquidity & More",
+    "Community Collaboration Opportunities",
+    "Be Part of Denver’s First Member-Run Bitcoin Citadel",
+    "Conference Room Booking",
+    "Quiet Daytime Call Space",
+    "Extensive Desk & Work Space",
+    "Daily Interaction with the Brightest Minds in Bitcoin",
     ],
     button: {
       text: "Apply for Membership",
       link: "/membership-application",
     },
   },
-
+  {
+    name: "Private Office",
+    price: {
+      monthly: "$600/mo",
+      annual: "$7200",
+      discount: "0%",
+      original: "$600",
+    },
+    popular: true,
+    features: [
+    "Dedicated Private Office Space",
+    "Building Access: 24/7",
+    "Unlimited Co-Working",
+    "Unlimited Guest Passes",
+    "Access to Workspace + Creative Tools",
+    "Private Member-Only Events",
+    "Free & Discounted Access to Ticketed Events",
+    "Sovereign Tools: NOSTR, DATUM, Cloud Storage, Liquidity & More",
+    "Community Collaboration Opportunities",
+    "Be Part of Denver’s First Member-Run Bitcoin Citadel",
+    "Conference Room Booking",
+    "Standing Desk, Locking Cabinets, Lockable Door",
+    "Quiet Daytime Call Space",
+    "Extensive Desk & Work Space",
+    "Daily Interaction with the Brightest Minds in Bitcoin",
+    ],
+    button: {
+      text: "Apply for Membership",
+      link: "/membership-application",
+    },
+  },
   {
     name: "Public",
     price: {
@@ -106,7 +141,6 @@ const pricing = [
       "Full Day of Building Access",
       "Workspace & Creator Amenities",
       "Networking & Socialization",
-      "+ Free Benefits & More...",
     ],
     button: {
       text: "Get Them Here",
@@ -125,9 +159,10 @@ const pricing = [
         <Fragment slot="desc"> Simple Pricing. No Surprises. <br/>
         </Fragment>
       </Sectionhead>
-      <div class="grid md:grid-cols-2 gap-6 mx-auto max-w-4xl mt-12 mb-12 items-stretch h-full">
-        <PricingCard plan={pricing[0]} />
-        <PricingCard plan={pricing[1]} />
+      <div class="grid md:grid-cols-3 gap-6 mx-auto max-w-8xl mt-12 mb-12 items-stretch h-full">
+        <PricingCard plan={pricing[0]} /> <!-- Social -->
+        <PricingCard plan={pricing[1]} /> <!-- Co-Working -->
+        <PricingCard plan={pricing[2]} /> <!-- Private Office -->
       </div>
     </Container>
   </div>
@@ -135,8 +170,8 @@ const pricing = [
   <!-- Lower Section with Custom Background -->
   <div class="bg-black py-12">
     <Container>
-      <div class="grid md:grid-cols-3 gap-6 mx-auto max-w-6xl mt-12">
-        {pricing.slice(2).map((item) => (
+      <div class="grid md:grid-cols-3 gap-6 mx-auto max-w-8xl mt-12">
+        {pricing.slice(3).map((item) => (
           <PricingCard plan={item} />
         ))}
       </div>

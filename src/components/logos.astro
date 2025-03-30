@@ -12,10 +12,10 @@ const foundingSponsors = [
 
 // List of other sponsor images, their alt text, and URLs
 const otherSponsors = [
-  { src: "/assets/sponsors/TheSpace_Logos_Symbol_4.webp", alt: "Support Us", url: "https://pay.zaprite.com/pl_BpbI4MwTQ8", format: "webp" },
-  { src: "/assets/sponsors/TheSpace_Logos_Symbol_4.webp", alt: "Support Us", url: "https://pay.zaprite.com/pl_BpbI4MwTQ8", format: "webp" },
-  { src: "/assets/sponsors/TheSpace_Logos_Symbol_4.webp", alt: "Support Us", url: "https://pay.zaprite.com/pl_BpbI4MwTQ8", format: "webp" },
-  { src: "/assets/sponsors/TheSpace_Logos_Symbol_4.webp", alt: "Support Us", url: "https://pay.zaprite.com/pl_BpbI4MwTQ8", format: "webp" },
+  { src: "/assets/sponsors/Colorado_AirFilter.webp", alt: "Support Us", url: "https://coloradoairfilter.com", format: "webp" },
+  { src: "/assets/sponsors/TheSpace_Logos_Symbol_4.webp", alt: "Support Us", url: "mailto:contact@denver.space", format: "webp" },
+  { src: "/assets/sponsors/TheSpace_Logos_Symbol_4.webp", alt: "Support Us", url: "mailto:contact@denver.space", format: "webp" },
+  { src: "/assets/sponsors/TheSpace_Logos_Symbol_4.webp", alt: "Support Us", url: "mailto:contact@denver.space", format: "webp" },
 ];
 ---
 
@@ -62,7 +62,7 @@ const otherSponsors = [
             <img src={sponsor.src} alt={sponsor.alt} loading="eager" class="object-contain h-full w-full" />
           </div>
         ) : (
-          <img src={sponsor.src} alt={sponsor.alt} loading="eager" class="h-12 w-12 md:h-20 md:w-20 object-contain" />
+          <img src={sponsor.src} alt={sponsor.alt} loading="eager" class="h-12 w-12 md:h-20 md:w-20 object-cover rounded-full" />
         )}
       </a>
     ))}
@@ -78,7 +78,7 @@ const otherSponsors = [
             <img src={sponsor.src} alt={sponsor.alt} loading="eager" class="object-contain h-full w-full" />
           </div>
         ) : (
-          <img src={sponsor.src} alt={sponsor.alt} loading="eager" class="h-12 w-12 md:h-20 md:w-20 object-contain" />
+          <img src={sponsor.src} alt={sponsor.alt} loading="eager" class="h-12 w-12 md:h-20 md:w-20 object-cover rounded-full" />
         )}
       </a>
     ))}
