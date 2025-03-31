@@ -5,14 +5,14 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
 const values = [
-  { title: "Event Space", description: "Our presentation room and common area connect, perfect for larger events.", icon: "bx:building" },
+  { title: "Event Space", description: "Our presentation room and common area connect two buildings, perfect for larger events.", icon: "bx:building" },
   { title: "Co-Working Desks", description: "Large fold-up desks on wheels and office chairs make it easy to work wherever.", icon: "bx:bxs-group" },
-  { title: "Conference Room", description: "A bookable conference room is ready for calls, meetings, and private presentations.", icon: "bx:table" },
+  { title: "Conference Room", description: "Bookable conference rooms are ready for calls, meetings, and private presentations.", icon: "bx:table" },
   { title: "Lounge Space", description: "Half of our venue is set up for lounging and socialization, with premium furniture and decor. Sound-money vibe.", icon: "bx:chair" },
-  { title: "Podcast Room", description: "A private podcast room allows us to record content without disturbing others.", icon: "bx:bxs-microphone" },
-  { title: "Backyard", description: "A fenced backyard and hangout space connects to two separate parts of the building. Great for BBQs.", icon: "bx:bxs-tree" },
+  { title: "Podcast Room", description: "A private podcast room allows us to record the best content in The Space.", icon: "bx:bxs-microphone" },
+  { title: "Backyard", description: "A fenced backyard and hangout area connects to two separate parts of the building. Great for BBQs.", icon: "bx:bxs-tree" },
   { title: "Snacks and Drinks", description: "We keep stock of some popular workplace snacks and drinks.", icon: "bx:bxs-drink" },
-  { title: "2 Kitchens, 3 Bathrooms", description: "Two full kitchens and three bathrooms keep things from feeling overwhelmed.", icon: "bx:dish" },
+  { title: "3 Kitchens, 5 Bathrooms", description: "Three full kitchens and five bathrooms keep things from feeling overwhelmed.", icon: "bx:dish" },
   { title: "Off-Street Parking", description: "Our venue has five parking spots behind the building. First come, first serve.", icon: "bx:bxs-car" },
 ];
 ---
@@ -46,6 +46,29 @@ const values = [
       grid-template-columns: 1fr !important;
     }
   }
+
+
+  .volunteer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .volunteer {
+    display: inline-block;
+    text-align: center;
+  }
+  .volunteer img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
 </style>
 
 <Layout title="Venue">
@@ -63,12 +86,14 @@ const values = [
     </Sectionhead>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
-  <img src="/assets/venue/3700Franklin_Back.webp" alt="Heatpunk Summit Venue" class="venue-image" />
-  <img src="/assets/venue/3700Franklin_Front.webp" alt="Heatpunk Summit Venue" class="venue-image" />
-  <img src="/assets/venue/VenueEvent_deck_006.png" alt="Heatpunk Summit Venue" class="venue-image" />
-  <img src="/assets/venue/VenueEvent_deck_007.png" alt="Heatpunk Summit Venue" class="venue-image" />
-  <img src="/assets/venue/VenueEvent_deck_014.png" alt="Heatpunk Summit Venue" class="venue-image" />
-  <img src="/assets/venue/VenueEvent_deck_016.png" alt="Heatpunk Summit Venue" class="venue-image" />
+  <img src="/assets/venue/3700Franklin_Back.webp" alt="Venue Photos" class="venue-image" />
+  <img src="/assets/venue/3700Franklin_Front.webp" alt="Venue Photos" class="venue-image" />
+  <img src="/assets/venue/VenueEvent_deck_006.png" alt="Venue Photos" class="venue-image" />
+  <img src="/assets/venue/VenueEvent_deck_007.png" alt="Venue Photos" class="venue-image" />
+  <img src="/assets/venue/VenueEvent_deck_014.png" alt="Venue Photos" class="venue-image" />
+  <img src="/assets/venue/VenueEvent_deck_016.png" alt="Venue Photos" class="venue-image" />
+  <img src="/assets/venue/The_Space_EventVenue_Deck.001.png" alt="Venue Photos" class="venue-image" />
+  <img src="/assets/venue/The_Space_EventVenue_Deck.002.png" alt="Venue Photos" class="venue-image" />
 </div>
 
     <!-- Amenities -->
@@ -96,8 +121,40 @@ const values = [
     <section class="flex flex-col mt-20 mb-20 items-center lg:space-y-7">
       <img src="/assets/venue/location_map.webp" alt="The Space Lounge" class="w-full lg:w-11/12 rounded-lg" style="box-shadow: none;" />
     </section>
+    
   </Container>
+  <div class="volunteer-section text-center bg-black py-10">
+    <h2 class="mt-10 text-4xl font-bold text-white">Resident Companies</h2>
+    <p class="mt-4 mb-4 px-10 text-center text-gray-200">The companies building the future of Bitcoin from within The Space.</p>
+    <div class="mt-20 volunteer-container">
+      <div class="volunteer mt-4">
+        <a href="https://epochvc.io" target="_blank">
+          <img src="/assets/companies/Epoch.png" alt="Company 1" class="h-24 w-24 object-cover rounded-full border-2 border-white shadow-md" />
+        </a>
+        <p class="text-white mt-2">Epoch VC</p>
+      </div>
+      <div class="volunteer mt-4">
+        <a href="https://basilic.io" target="_blank">
+          <img src="/assets/companies/Basilic.png" alt="Company 2" class="h-24 w-24 object-cover rounded-full border-2 border-white shadow-md" />
+        </a>
+        <p class="text-white mt-2">Basilic Financial</p>
+      </div>
+      <div class="volunteer mt-4">
+        <a href="https://www.bitcoinlayers.org" target="_blank">
+          <img src="/assets/companies/BitcoinLayers.png" alt="Company 3" class="h-24 w-24 object-cover rounded-full border-2 border-white shadow-md" />
+        </a>
+        <p class="text-white mt-2">Bitcoin Layers</p>
+      </div>
+      <div class="volunteer mt-4">
+        <a href="https://www.exergy.me" target="_blank">
+          <img src="/assets/companies/Exergy.png" alt="Company 3" class="h-24 w-24 object-cover rounded-full border-2 border-white shadow-md" />
+        </a>
+        <p class="text-white mt-2">Exergy</p>
+      </div>
+    </div>
+  </div>
 </Layout>
+
 
 <style>
     .venue-image {
