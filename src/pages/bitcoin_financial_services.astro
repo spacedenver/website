@@ -3,497 +3,188 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Bitcoin for Financial Services - 2025">
   <Container class="w-full">
     <Sectionhead>
-      <Fragment slot="title">Bitcoin for Financial Services Summit 2025</Fragment>
+      <Fragment slot="title">Bitcoin for Financial Services - 2025</Fragment>
       <Fragment slot="desc">
-        Where Capital Meets Bitcoin Strategy
+        Bringing together capital movers and client advisors for confident Bitcoin strategies
       </Fragment>
     </Sectionhead>
 
-    <!-- Hero CTA -->
+    <!-- Purchase Tickets -->
     <div class="flex justify-center mt-12">
-      <a data-label="Bitcoin for Financial Services 2025" 
-         style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" 
-         href="https://pay.zaprite.com/pl_uQ30NqptEQ" 
-         target="_blank" 
-         rel="no referrer noopener">
-        🎯 Limited to 150 Professionals - Secure Your Spot
-      </a>
+      <a data-label="Bitcoin for Financial Services 2025" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="https://pay.zaprite.com/pl_uQ30NqptEQ" target="_blank" rel="no referrer noopener">Register Now</a>
     </div>
 
     <!-- Overview Section -->
     <div class="mt-16">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Why This Summit Matters</h2>
-      <p class="text-lg mt-4 text-slate-600">
+      <h2 class="text-3xl font-bold">Overview</h2>
+      <p class="text-lg mt-4 text-left md:text-justify text-black px-4 md:px-4 lg:px-10">
         The Bitcoin for Financial Services Summit brings together the people who already move capital
-        and advise clients so they can confidently deploy Bitcoin strategies.
+        and advise clients so they can confidently deploy Bitcoin strategies. Over three days you will:
       </p>
-      
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-bullseye" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Real-World Insights</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Hear what is working in the field today</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-rocket" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Future Products</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">See tomorrow's products before they ship</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-briefcase" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Revenue Relationships</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Build the relationships that turn ideas into revenue</p>
-          </div>
-        </div>
-      </div>
+      <ul class="list-disc pl-5 mt-4 px-4 md:px-4 lg:px-10">
+        <li>Hear what is working in the field today</li>
+        <li>See tomorrow's products before they ship</li>
+        <li>Build the relationships that turn ideas into revenue</li>
+      </ul>
+      <p class="text-lg mt-4 text-left md:text-justify text-black px-4 md:px-4 lg:px-10">
+        Reserve your spot now—limited to 150 forward-thinking professionals.
+      </p>
     </div>
 
-    <!-- Summit Objectives -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Summit Objectives</h2>
-      <p class="text-lg mt-4 text-slate-600">What you'll achieve:</p>
-      
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 mt-16 gap-16">
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-book" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Actionable Knowledge</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Equip financial professionals with practical Bitcoin strategies</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-group" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Strategic Partnerships</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Spark partnerships that accelerate development</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-network-chart" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Professional Network</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Connect with like-minded professionals</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-user-check" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Referral Partners</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Discover qualified referral opportunities</p>
-          </div>
-        </div>
-      </div>
+    <!-- Summit Objectives Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Summit Objectives</h2>
+      <ol class="list-decimal pl-5 mt-4">
+        <li>Equip financial professionals with actionable Bitcoin knowledge</li>
+        <li>Spark partnerships that accelerate product & services development</li>
+        <li>Network with like-minded professionals</li>
+        <li>Discover qualified referral partners</li>
+      </ol>
     </div>
 
     <!-- Date Section -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Date and Time</h2>
-      <p class="text-lg mt-4 text-slate-600">Three days of intensive learning and networking:</p>
-      
-      <div class="grid md:grid-cols-3 gap-6 mt-16">
-        <div class="bg-gradient border-4 border-[#ffffff] rounded-lg p-6 transition-transform duration-500 ease hover:transform hover:translate-y-1 text-center">
-          <h3 class="text-2xl font-bold text-white mb-4">Thursday</h3>
-          <h4 class="text-xl font-semibold text-white mb-2">October 16, 2025</h4>
-          <p class="text-white">⛳ Golf Classic starts at 10 AM</p>
-          <p class="text-slate-200 text-sm mt-2">Network on the greens</p>
-        </div>
-        <div class="bg-gradient border-4 border-[#ffffff] rounded-lg p-6 transition-transform duration-500 ease hover:transform hover:translate-y-1 text-center">
-          <h3 class="text-2xl font-bold text-white mb-4">Friday</h3>
-          <h4 class="text-xl font-semibold text-white mb-2">October 17, 2025</h4>
-          <p class="text-white">🎯 Summit begins at 10 AM</p>
-          <p class="text-slate-200 text-sm mt-2">Coffee from 8 AM</p>
-        </div>
-        <div class="bg-gradient border-4 border-[#ffffff] rounded-lg p-6 transition-transform duration-500 ease hover:transform hover:translate-y-1 text-center">
-          <h3 class="text-2xl font-bold text-white mb-4">Saturday</h3>
-          <h4 class="text-xl font-semibold text-white mb-2">October 18, 2025</h4>
-          <p class="text-white">🏁 Concludes at 4:00 PM</p>
-          <p class="text-slate-200 text-sm mt-2">Full day of content</p>
-        </div>
-      </div>
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Dates & Times</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Thursday, October 16 – Saturday, 18, 2025</li>
+        <li>Golf on Thursday morning on the 16th starting at 10am</li>
+        <li>Summit activities will start 10 AM MST Friday morning on the 17th. Feel free to arrive anytime after 8 AM for coffee and breakfast.</li>
+        <li>We'll conclude a full day of summit activities on Saturday afternoon at 4:00 PM MST.</li>
+      </ul>
     </div>
 
     <!-- Location Section -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Location</h2>
-      <p class="text-lg mt-4 text-slate-600">The Space - Denver's Bitcoin hub.</p>
-      
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-plane" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Airport Access</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Easily accessible from Denver International Airport via Train (no rental car required)</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-hotel" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Accommodations</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Ample accommodations nearby including hotels, restaurants, and bars within walking distance</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-map" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Prime Location</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Located in the heart of Denver's RiNo (River North) district. Close to I-70 for easy access to the ski resorts</p>
-          </div>
-        </div>
-      </div>
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Location</h2>
+      <p class="mt-4">
+        The Space - Denver's Bitcoin hub.
+      </p>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Easily accessible from Denver International Airport via Train (no rental car required).</li>
+        <li>Ample accommodations nearby including hotels, restaurants, and bars within walking distance.</li>
+        <li>Located in the heart of Denver's RiNo (River North) district. Close to I-70 for easy access to the ski resorts.</li>
+      </ul>
 
-      <!-- Venue Images Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
-        <img src="/assets/venue/3700Franklin_Back.webp" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
-        <img src="/assets/venue/3700Franklin_Front.webp" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
-        <img src="/assets/venue/VenueEvent_deck_006.png" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
-        <img src="/assets/venue/VenueEvent_deck_007.png" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
-        <img src="/assets/venue/VenueEvent_deck_014.png" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
-        <img src="/assets/venue/VenueEvent_deck_016.png" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
-      </div>
-    </div>
+<!-- Venue Images Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+    <img src="/assets/venue/3700Franklin_Back.webp" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
+    <img src="/assets/venue/3700Franklin_Front.webp" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
+    <img src="/assets/venue/VenueEvent_deck_006.png" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
+    <img src="/assets/venue/VenueEvent_deck_007.png" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
+    <img src="/assets/venue/VenueEvent_deck_014.png" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
+    <img src="/assets/venue/VenueEvent_deck_016.png" alt="Bitcoin Financial Services Summit Venue" class="venue-image" />
+  </div>
 
     <!-- Schedule Section -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Schedule</h2>
-      <p class="text-lg mt-4 text-slate-600">The detailed event schedule will be emailed to attendees. Key discussion topics include:</p>
-      
-      <div class="grid md:grid-cols-2 gap-16 mt-16">
-        <div>
-          <h3 class="text-2xl font-bold mb-6">🎯 Strategic Topics</h3>
-          <ul class="space-y-4">
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Bitcoin's value proposition for advisors</span>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Corporate treasury management</span>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Bitcoin financial products</span>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Bitcoin lending strategies</span>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Bitcoin account practices</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold mb-6">🛡️ Risk & Planning</h3>
-          <ul class="space-y-4">
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Inheritance & trust planning</span>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Custody solutions</span>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Bitcoin & Insurance</span>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Bitcoin financial planning</span>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-                <Icon class="text-white" name="bx:bxs-check-circle" />
-              </div>
-              <span class="text-slate-600">Spending bitcoin strategies</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Schedule</h2>
+      <p class="mt-4">
+        The detailed event schedule will be emailed to attendees. Detailed programming will follow, general discussions include:
+      </p>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Bitcoin's value proposition for advisors</li>
+        <li>Inheritance & trust planning</li>
+        <li>Custody</li>
+        <li>Bitcoin financial planning</li>
+        <li>Spending bitcoin</li>
+        <li>Bitcoin account practices</li>
+        <li>Corporate treasury management with bitcoin</li>
+        <li>Bitcoin & Insurance</li>
+        <li>Bitcoin financial products</li>
+        <li>Bitcoin lending</li>
+      </ul>
     </div>
 
     <!-- Why Attend Section -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Why Attend</h2>
-      <p class="text-lg mt-4 text-slate-600">What makes this summit different:</p>
-      
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-network-chart" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">High-Impact Network</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Meet RIAs, CPAs, asset managers, HNWI and FinTech builders already serving Bitcoin clients</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-cog" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Tactical Sessions</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Custody and collateralized lending, estate planning, insurance coverage, and more</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-rocket" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Deal Flow</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Live product announcements and sponsor showcases mean you see opportunities first</p>
-          </div>
-        </div>
-      </div>
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Why Attend</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <li><strong>High-impact network:</strong> meet RIAs, CPAs, asset managers, HNWI and FinTech builders already serving Bitcoin clients</li>
+        <li><strong>Tactical sessions:</strong> custody and collateralized lending, estate planning, insurance coverage, and more</li>
+        <li><strong>Deal flow:</strong> live product announcements and sponsor showcases mean you see opportunities first</li>
+      </ul>
     </div>
 
-    <!-- Who Should Attend -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Who Should Attend</h2>
-      <p class="text-lg mt-4 text-slate-600">Perfect for these professionals:</p>
-      
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-16">
-        <div class="text-center">
-          <div class="text-4xl mb-4">⚖️</div>
-          <p class="font-semibold">Tax Professionals</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">🏛️</div>
-          <p class="font-semibold">Attorneys</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">🛡️</div>
-          <p class="font-semibold">Insurance Agents</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">📊</div>
-          <p class="font-semibold">Asset Managers</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">💎</div>
-          <p class="font-semibold">HNWI Investors</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">💼</div>
-          <p class="font-semibold">Wealth Advisors</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">🤔</div>
-          <p class="font-semibold">Bitcoin-Curious</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">🏦</div>
-          <p class="font-semibold">Lenders</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">🚀</div>
-          <p class="font-semibold">Fintech Leaders</p>
-        </div>
-      </div>
+    <!-- Who Should Attend Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Who Should Attend</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Tax professionals</li>
+        <li>Attorneys</li>
+        <li>Insurance agents</li>
+        <li>Asset managers</li>
+        <li>Institutional and high-net-worth investors</li>
+        <li>Wealth advisors</li>
+        <li>Bitcoin-curious</li>
+        <li>Lenders</li>
+        <li>Fintech leaders</li>
+      </ul>
     </div>
 
-    <!-- Event Highlights -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Event Highlights</h2>
-      <p class="text-lg mt-4 text-slate-600">What to expect:</p>
-      
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-golf-ball" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Golf Classic</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">18 holes of networking before content kicks off</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-microphone" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Keynotes</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Industry pioneers share hard-won lessons</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-conversation" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Panel Sessions</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Practitioners debate real-world case studies</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-food-menu" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Community Meals & After-Party</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Structured time to deepen relationships</p>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name="bx:bxs-rocket" />
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg">Live Launches</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">Be first to see new financial products revealed on stage</p>
-          </div>
-        </div>
-      </div>
+    <!-- Event Highlights Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Event Highlights</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <li><strong>Golf Classic:</strong> 18 holes of networking before content kicks off</li>
+        <li><strong>Keynotes:</strong> industry pioneers share hard-won lessons</li>
+        <li><strong>Panel sessions:</strong> practitioners debate real-world case studies</li>
+        <li><strong>Community meals & after-party:</strong> structured time to deepen relationships</li>
+        <li><strong>Live launches:</strong> be first to see new financial products revealed on stage</li>
+      </ul>
     </div>
 
     <!-- Tickets Section -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Tickets</h2>
-      <p class="text-lg mt-4 text-slate-600">Investment options for your professional development:</p>
-      
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-16">
-        <div class="bg-white border-4 border-[#ffffff] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
-          <div class="text-center">
-            <h3 class="text-2xl font-bold mb-4">General Admission</h3>
-            <div class="text-4xl font-bold text-slate-800 mb-4">$275</div>
-            <p class="text-slate-600 mb-6">All sessions, meals, and after-party included</p>
-            <ul class="text-left space-y-2 mb-6">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>All summit sessions</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Networking meals</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>After-party access</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Digital resources</li>
-            </ul>
-          </div>
-        </div>
-        <div class="bg-gradient border-4 border-[#ffffff] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
-          <div class="text-center">
-            <div class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold mb-4 inline-block">POPULAR</div>
-            <h3 class="text-2xl font-bold text-white mb-4">General + Golf</h3>
-            <div class="text-4xl font-bold text-white mb-4">$395</div>
-            <p class="text-white mb-6">Everything plus the exclusive golf networking event</p>
-            <ul class="text-left space-y-2 mb-6">
-              <li class="flex items-center"><span class="text-white mr-2">✓</span>All General Admission benefits</li>
-              <li class="flex items-center"><span class="text-white mr-2">✓</span>Golf Classic access</li>
-              <li class="flex items-center"><span class="text-white mr-2">✓</span>Exclusive golf networking</li>
-              <li class="flex items-center"><span class="text-white mr-2">✓</span>Priority seating</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <p class="text-center text-slate-600 mt-8">Registration includes all sessions, meals, and the after-party.</p>
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Tickets</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <li><strong>General Admission</strong> – $275</li>
+        <li><strong>General Admission + Golf</strong> – $395</li>
+      </ul>
+      <p class="mt-4">Registration includes all sessions, meals, and the after-party.</p>
     </div>
 
-    <!-- Ready to Join Us -->
-    <div class="mt-28 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Ready To Join Us?</h2>
-      <p class="text-lg mt-4 text-slate-600 mb-8">
+    <!-- Ready to Join Us Section -->
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold">Ready To Join Us?</h2>
+      <p class="mt-4">
         Purchase your ticket at the zaprite link below.
       </p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <Link
-          href="https://pay.zaprite.com/pl_uQ30NqptEQ"
-          size="lg"
-          style="primary"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex gap-3 items-center justify-center"
-        >
-          <Icon class="text-white w-5 h-5" name="bx:bx-credit-card" />
-          Purchase Tickets
-        </Link>
-        
-        <Link
-          href="mailto:contact@denver.space"
-          size="lg"
-          style="outline"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex gap-3 items-center justify-center"
-        >
-          <Icon class="text-black w-5 h-5" name="bx:bx-envelope" />
-          Contact Event Coordinator
-        </Link>
+      <div class="flex justify-center mt-12 mb-12">
+        <a data-label="Purchase Tickets" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="https://pay.zaprite.com/pl_uQ30NqptEQ" target="_blank" rel="no referrer noopener">Purchase Tickets</a>
+      </div>
+
+      <div class="flex justify-center mt-12 mb-12">
+        <a data-label="Contact Event Coordinator" style="background-color:#e51f5d;color:#ffffff;min-width:128px;padding:8px 16px;border-radius:8px;text-align:center;font-weight:bold;text-decoration:none;display:inline-block;" href="mailto:contact@denver.space" target="_blank" rel="no referrer noopener">Contact the Event Coordinator</a>
       </div>
     </div>
 
     <!-- Tagline -->
-    <div class="mt-28 text-center bg-gradient border-4 border-[#ffffff] rounded-lg p-8 transition-transform duration-500 ease hover:transform hover:translate-y-1">
-      <h2 class="text-3xl font-bold text-white italic">Shape the future of Bitcoin-powered finance—see you in Denver.</h2>
+    <div class="mt-10 text-center">
+      <h2 class="text-2xl font-bold italic">Shape the future of Bitcoin-powered finance—see you in Denver.</h2>
     </div>
 
     <!-- FAQ Section -->
-    <div class="mt-28">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Frequently Asked Questions</h2>
+    <div class="mt-10 mb-20">
+      <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
       
-      <div class="space-y-8 mt-16">
-        <div>
-          <h3 class="text-xl font-semibold mb-3">Is this only for Bitcoin experts?</h3>
-          <p class="text-slate-600">No. Content is designed for finance professionals with varying levels of Bitcoin familiarity. We welcome both Bitcoin veterans and those just beginning their journey.</p>
-        </div>
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold">Is this only for Bitcoin experts?</h3>
+        <p class="mt-2">No. Content is designed for finance professionals with varying levels of Bitcoin familiarity.</p>
+      </div>
 
-        <div>
-          <h3 class="text-xl font-semibold mb-3">Will sessions qualify for CPE or CE credit?</h3>
-          <p class="text-slate-600">We are applying for credit in multiple disciplines; details will be announced in September 2025.</p>
-        </div>
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold">Will sessions qualify for CPE or CE credit?</h3>
+        <p class="mt-2">We are applying for credit in multiple disciplines; details announced in September.</p>
+      </div>
 
-        <div>
-          <h3 class="text-xl font-semibold mb-3">What is the refund policy?</h3>
-          <p class="text-slate-600">Full refunds are available through September 1, 2025. Substitutions are allowed anytime before the event.</p>
-        </div>
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold">What is the refund policy?</h3>
+        <p class="mt-2">Full refunds through September 1, 2025; substitutions allowed anytime.</p>
       </div>
     </div>
 
@@ -501,24 +192,40 @@ import { Icon } from "astro-icon/components";
 </Layout>
 
 <style>
-  .bg-gradient {
-    background: linear-gradient(135deg, #E51F5D, #E51F5D, #F68830, #F5D54C, #FDE3B7);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease;
+  .grid-container {
+    display: grid;
+    grid-gap: 16px;
   }
 
-  .bg-gradient:hover {
-    transform: translateY(-5px);
+  /* For large screens: 3 columns, 2 rows */
+  @media (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* For medium screens: 2 columns, 3 rows */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* For small screens: 1 column, 6 rows */
+  @media (max-width: 767px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 
   .venue-image {
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .venue-image:hover {
-    transform: scale(1.05);
+  object-fit: cover; /* Maintain aspect ratio and fill the space */
+  border-radius: 10px; /* Optional: keep the rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
   }
 </style>
