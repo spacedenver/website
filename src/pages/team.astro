@@ -10,6 +10,86 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && new Date(data.publishDate) < new Date();
 });
 
+// Define the new board structure
+const boardMembers = [
+  {
+    name: "Eric Y.",
+    title: "Chairman of the Board",
+    avatar: { src: "/assets/headshots/eric.webp", alt: "Eric Y." },
+    hasImage: true
+  },
+  {
+    name: "Zach W.",
+    title: "Vice Chair",
+    avatar: { src: "/assets/headshots/zach.webp", alt: "Zach W." },
+    hasImage: true
+  },
+  {
+    name: "Tyler S.",
+    title: "President & CEO",
+    avatar: { src: "/assets/headshots/tyler.webp", alt: "Tyler S." },
+    hasImage: true
+  },
+  {
+    name: "Joey M.",
+    title: "Secretary",
+    avatar: { src: "/assets/headshots/joey.webp", alt: "Joey M." },
+    hasImage: true
+  },
+  {
+    name: "Charley H.",
+    title: "Member at Large",
+    avatar: { src: "/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp", alt: "Charley H." },
+    hasImage: false
+  },
+  {
+    name: "Ben B.",
+    title: "Member at Large",
+    avatar: { src: "/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp", alt: "Ben B." },
+    hasImage: false
+  },
+  {
+    name: "Rachel S.",
+    title: "Member at Large",
+    avatar: { src: "/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp", alt: "Rachel S." },
+    hasImage: false
+  }
+];
+
+// Define the officers
+const officers = [
+  {
+    name: "Tyler S.",
+    title: "President & CEO",
+    avatar: { src: "/assets/headshots/tyler.webp", alt: "Tyler S." },
+    hasImage: true
+  },
+  {
+    name: "Joel K.",
+    title: "COO",
+    avatar: { src: "/assets/headshots/joel.webp", alt: "Joel K." },
+    hasImage: true
+  },
+  {
+    name: "Dylan S.",
+    title: "CFO",
+    avatar: { src: "/assets/headshots/dylan.webp", alt: "Dylan S." },
+    hasImage: true
+  },
+  {
+    name: "Wyatt O.",
+    title: "CMO",
+    avatar: { src: "/assets/headshots/wyatt.webp", alt: "Wyatt O." },
+    hasImage: true
+  },
+  {
+    name: "Jeff B.",
+    title: "CTO",
+    avatar: { src: "/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp", alt: "Jeff B." },
+    hasImage: false
+  }
+];
+
 ---
 
 <Layout title="Board of Directors">
@@ -31,27 +111,77 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12 mb-20 team-grid">
       {
-        publishedTeamMembers.map((teamMemberEntry) => (
+        boardMembers.map((member) => (
           <div class="group border-4 border-[#ffffff] rounded-lg p-2 team-card">
             <div class="relative w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                loading="eager"
-                class="w-full rounded bg-white object-cover object-center aspect-square"
-              />
-              <div class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 space-y-3 rounded">
-                <h3 class="text-xl font-semibold">{teamMemberEntry.data.name}</h3>
-                <p>{teamMemberEntry.data.bio}</p>
-              </div>
+              {member.hasImage ? (
+                <Picture
+                  src={member.avatar.src}
+                  alt={member.avatar.alt}
+                  sizes="(max-width: 800px) 100vw, 400px"
+                  width={400}
+                  height={400}
+                  loading="eager"
+                  class="w-full rounded bg-white object-cover object-center aspect-square"
+                />
+              ) : (
+                <div class="w-full h-full rounded bg-gray-100 flex items-center justify-center aspect-square">
+                  <img 
+                    src={member.avatar.src} 
+                    alt={member.avatar.alt}
+                    class="w-24 h-24 opacity-50"
+                  />
+                </div>
+              )}
             </div>
             <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
+              <h2 class="text-lg text-gray-800">{member.name}</h2>
               <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
+                {member.title}
+              </h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Officers
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        The Officer team consists of Board-selected individuals who oversee daily operations and efforts for The Space.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12 mb-20 team-grid">
+      {
+        officers.map((officer) => (
+          <div class="group border-4 border-[#ffffff] rounded-lg p-2 team-card">
+            <div class="relative w-full aspect-square">
+              {officer.hasImage ? (
+                <Picture
+                  src={officer.avatar.src}
+                  alt={officer.avatar.alt}
+                  sizes="(max-width: 800px) 100vw, 400px"
+                  width={400}
+                  height={400}
+                  loading="eager"
+                  class="w-full rounded bg-white object-cover object-center aspect-square"
+                />
+              ) : (
+                <div class="w-full h-full rounded bg-gray-100 flex items-center justify-center aspect-square">
+                  <img 
+                    src={officer.avatar.src} 
+                    alt={officer.avatar.alt}
+                    class="w-24 h-24 opacity-50"
+                  />
+                </div>
+              )}
+            </div>
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">{officer.name}</h2>
+              <h3 class="text-sm text-slate-500">
+                {officer.title}
               </h3>
             </div>
           </div>
