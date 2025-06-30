@@ -10,81 +10,93 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && new Date(data.publishDate) < new Date();
 });
 
-// Define the new board structure
+// Define the new board structure with descriptions
 const boardMembers = [
   {
     name: "Eric Y.",
     title: "Chairman of the Board",
+    bio: "Author of The 7th Property and founder of Epoch VC.",
     avatar: { src: "/assets/headshots/eric.webp", alt: "Eric Y." },
     hasImage: true
   },
   {
     name: "Zach W.",
     title: "Vice Chair",
+    bio: "Host of Value Stack Podcast and Denver BitDevs. Probably explaining multisig to your grandma right now.",
     avatar: { src: "/assets/headshots/zach.webp", alt: "Zach W." },
     hasImage: true
   },
   {
     name: "Tyler S.",
     title: "President & CEO",
+    bio: "Founder of Exergy, an engineering consulting firm that designs heating systems powered by bitcoin mining.",
     avatar: { src: "/assets/headshots/tyler.webp", alt: "Tyler S." },
     hasImage: true
   },
   {
     name: "Joey M.",
     title: "Secretary",
+    bio: "Bitcoin bookkeeper and an emotional healing practitioner offering therapeutic services.",
     avatar: { src: "/assets/headshots/joey.webp", alt: "Joey M." },
     hasImage: true
   },
   {
     name: "Charley H.",
     title: "Member at Large",
+    bio: "Board member bio coming soon.",
     avatar: { src: "/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp", alt: "Charley H." },
     hasImage: false
   },
   {
     name: "Ben B.",
     title: "Member at Large",
+    bio: "Board member bio coming soon.",
     avatar: { src: "/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp", alt: "Ben B." },
     hasImage: false
   },
   {
     name: "Rachel S.",
     title: "Member at Large",
+    bio: "Board member bio coming soon.",
     avatar: { src: "/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp", alt: "Rachel S." },
     hasImage: false
   }
 ];
 
-// Define the officers
+// Define the officers with descriptions
 const officers = [
   {
     name: "Tyler S.",
     title: "President & CEO",
+    bio: "Founder of Exergy, an engineering consulting firm that designs heating systems powered by bitcoin mining.",
     avatar: { src: "/assets/headshots/tyler.webp", alt: "Tyler S." },
     hasImage: true
   },
   {
     name: "Joel K.",
     title: "COO",
+    bio: "Founder of Bitcoin for Bullies, a dog rescue non-profit with emphasis on educating businesses and the public on the merits of bitcoin.",
     avatar: { src: "/assets/headshots/joel.webp", alt: "Joel K." },
     hasImage: true
   },
   {
     name: "Dylan S.",
     title: "CFO",
+    bio: "Structural engineer by trade, bitcoin finance guru by hobby.",
     avatar: { src: "/assets/headshots/dylan.webp", alt: "Dylan S." },
     hasImage: true
   },
   {
     name: "Wyatt O.",
     title: "CMO",
+    bio: "Founder of Basilic Financial, a bitcoin wealth management firm.",
     avatar: { src: "/assets/headshots/wyatt.webp", alt: "Wyatt O." },
     hasImage: true
   },
   {
     name: "Jeff B.",
     title: "CTO",
+    bio: "Officer bio coming soon.",
     avatar: { src: "/assets/branding/Logos/TheSpace_Logos_Symbol_2.webp", alt: "Jeff B." },
     hasImage: false
   }
@@ -133,6 +145,10 @@ const officers = [
                   />
                 </div>
               )}
+              <div class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 space-y-3 rounded">
+                <h3 class="text-xl font-semibold">{member.name}</h3>
+                <p class="text-center">{member.bio}</p>
+              </div>
             </div>
             <div class="mt-4 text-center">
               <h2 class="text-lg text-gray-800">{member.name}</h2>
@@ -177,6 +193,10 @@ const officers = [
                   />
                 </div>
               )}
+              <div class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 space-y-3 rounded">
+                <h3 class="text-xl font-semibold">{officer.name}</h3>
+                <p class="text-center">{officer.bio}</p>
+              </div>
             </div>
             <div class="mt-4 text-center">
               <h2 class="text-lg text-gray-800">{officer.name}</h2>
