@@ -58,28 +58,43 @@ const sponsorPlan = {
     gap: 2rem; /* Increase the gap for more horizontal padding */
     justify-items: center;
   }
+  
+  /* Make founding sponsor logos circular */
+  .sponsor-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .sponsor-logo:hover {
+    transform: scale(1.05);
+  }
+  
   @media (max-width: 800px) {
     .sponsors-grid {
       grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
     }
-    .sponsors-grid img {
-      width: 80px; /* Adjust the size as needed */
-      height: 80px; /* Adjust the size as needed */
+    .sponsor-logo {
+      width: 80px;
+      height: 80px;
     }
     .order-1.md\:order-2 {
       margin-bottom: 20px; /* Adjust the value as needed for the desired spacing */
     }
   }
   @media (max-width: 1200px) and (min-width: 801px) {
-    .sponsors-grid img {
-      width: 120px; /* Adjust the size as needed */
-      height: 120px; /* Adjust the size as needed */
+    .sponsor-logo {
+      width: 120px;
+      height: 120px;
     }
   }
   @media (min-width: 1201px) {
-    .sponsors-grid img {
-      width: 150px; /* Adjust the size as needed */
-      height: 150px; /* Adjust the size as needed */
+    .sponsor-logo {
+      width: 150px;
+      height: 150px;
     }
   }
   @media (max-width: 800px) and (orientation: landscape) {
@@ -133,13 +148,12 @@ const sponsorPlan = {
         <div class="sponsors-grid">
           {foundingSponsors.map((sponsor) => (
             <a href={sponsor.data.url} target="_blank" rel="noopener noreferrer" class="block">
-              <div class="relative w-full aspect-square">
-                <img src={sponsor.data.avatar?.src || '/default-event-image.webp'}
-                  loading="eager"
-                  alt={sponsor.data.avatar.alt || 'Sponsor Image'}
-                  class="sponsor-logo"
-                />
-              </div>
+              <img 
+                src={sponsor.data.avatar?.src || '/default-event-image.webp'}
+                loading="eager"
+                alt={sponsor.data.avatar.alt || 'Sponsor Image'}
+                class="sponsor-logo"
+              />
             </a>
           ))}
         </div>
@@ -152,7 +166,7 @@ const sponsorPlan = {
     </div>
   
     <!-- Donate to The Space Button -->
-    <div class="flex justify-center mt-0 mb-4">
+    <div class="flex justify-center mt-0 mb-20">
       <Link
         size="lg"
         style="outline"
@@ -163,19 +177,6 @@ const sponsorPlan = {
       >
         <img src="/assets/branding/Logos/TheSpace_Logos_Symbol_3.webp" alt="Donate Icon" loading="eager" class="w-7 h-7" />
         Donate to The Space
-      </Link>
-    </div>
-    <div class="flex justify-center mt-0 mb-20">
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://geyser.fund/project/thespace"
-        class="flex gap-3 items-center justify-center bg-[#D9314A] hover:bg-[#D9314A] text-black"
-        target="_blank"
-      >
-        <img src="/assets/branding/Logos/TheSpace_Logos_Symbol_3.webp" alt="Donate Icon" loading="eager" class="w-7 h-7" />
-        Geyser Fund
       </Link>
     </div>
   </Container>
