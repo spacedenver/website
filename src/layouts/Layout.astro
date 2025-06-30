@@ -3,6 +3,7 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
+import "../styles/global.css";
 
 export interface Props {
   title: string;
@@ -75,55 +76,5 @@ const makeTitle = title
     </main>
     <!-- Footer area -->
     <Footer />
-
-    <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: visible;
-      }
-      /* Ensure the footer is always at the bottom and the background is black */
-      body {
-        background-color: white;
-      }
-      footer {
-        background-color: black;
-      }
-      /* Additional styles to prevent margin collapse */
-      main {
-        display: flex;
-        flex-direction: column;
-      }
-      /* Reduce spacing between navbar and header */
-      header {
-        margin-top: 0;
-        padding-top: 0;
-      }
-      
-      /* Updated form styles */
-      input[type="checkbox"], input[type="radio"] {
-        accent-color: rgb(239 68 68) !important; /* red-500 */
-        border-color: rgb(239 68 68) !important;
-        border-width: 1px !important;
-        appearance: none !important;
-        -webkit-appearance: none !important;
-        -moz-appearance: none !important;
-        outline: 1px solid rgb(239 68 68) !important;
-        outline-offset: 0px !important;
-        width: 1rem !important;
-        height: 1rem !important;
-        background-color: white !important;
-        cursor: pointer !important;
-        position: relative !important;
-      }
-
-      input[type="checkbox"]:checked, input[type="radio"]:checked {
-        background-color: rgb(239 68 68) !important;
-      }
-
-      input[type="radio"] {
-        border-radius: 50% !important;
-      }
-    </style>
   </body>
 </html>
