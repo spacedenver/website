@@ -19,39 +19,6 @@ const otherSponsors = [
 ];
 ---
 
-<style>
-  /* CSS styling. Custom background gradient, grid formatting, and control for different screen sizes. */
-  .custom-gradient {
-    background: linear-gradient(135deg, #E51F5D, #F68830, #F5D54C, #FDE3B7);
-  }
-  .white-svg {
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-  }
-  .sponsors-grid {
-    display: grid;
-    gap: 2rem; /* Adjust vertical gap between rows */
-    justify-items: center;
-    align-items: center;
-  }
-  @media (min-width: 1024px) { /* Large screens */
-    .sponsors-grid {
-      grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
-    }
-  }
-  @media (min-width: 768px) and (max-width: 1023px) { /* Medium screens */
-    .sponsors-grid {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, auto);
-    }
-  }
-  @media (max-width: 767px) { /* Small screens */
-    .sponsors-grid {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, auto);
-    }
-  }
-</style>
-
 <div class="mt-24 mb-0 custom-gradient py-12">
   <h2 class="text-center text-white px-12">Made Possible by our Founding Sponsors</h2>
   <div class="sponsors-grid mt-10 mb-2">

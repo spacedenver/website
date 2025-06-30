@@ -48,22 +48,22 @@ import Sectionhead from "@components/sectionhead.astro";
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 justify-center items-center mx-auto max-w-lg">
         <div>
           <a href="https://braiins.com" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/events/Undermine2025/braiins.webp" alt="Braiins Logo" class="circle-image" />
+            <img src="/assets/events/Undermine2025/braiins.webp" alt="Braiins Logo" class="circle-image card-hover-effect" />
           </a>
         </div>
         <div>
           <a href="https://luxor.tech" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/events/Undermine2025/luxor.webp" alt="Luxor Logo" class="circle-image" />
+            <img src="/assets/events/Undermine2025/luxor.webp" alt="Luxor Logo" class="circle-image card-hover-effect" />
           </a>
         </div>
         <div>
           <a href="https://compassmining.io" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/events/Undermine2025/compass.webp" alt="Compass Mining Logo" class="circle-image" />
+            <img src="/assets/events/Undermine2025/compass.webp" alt="Compass Mining Logo" class="circle-image card-hover-effect" />
           </a>
         </div>
         <div>
           <a href="https://bitcoinminingworld.com" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/events/Undermine2025/BAM.webp" alt="BAM Logo" class="circle-image" />
+            <img src="/assets/events/Undermine2025/BAM.webp" alt="BAM Logo" class="circle-image card-hover-effect" />
           </a>
         </div>
       </div>
@@ -208,56 +208,3 @@ import Sectionhead from "@components/sectionhead.astro";
 
   </Container>
 </Layout>
-
-<style>
-  .grid-container {
-    display: grid;
-    grid-gap: 16px;
-  }
-
-  /* For large screens: 3 columns, 2 rows */
-  @media (min-width: 1024px) {
-    .grid-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  /* For medium screens: 2 columns, 3 rows */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .grid-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  /* For small screens: 1 column, 6 rows */
-  @media (max-width: 767px) {
-    .grid-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-  .venue-image {
-  object-fit: cover; /* Maintain aspect ratio and fill the space */
-  border-radius: 10px; /* Optional: keep the rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
-  }
-
-  .circle-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1; /* Ensure it's always a square */
-    border-radius: 50%; /* Make it circular */
-    object-fit: cover; /* Crop to fit within the circle */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better aesthetics */
-    transition: transform 0.3s ease; /* Add hover effect */
-  }
-
-  .circle-image:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-  }
-</style>

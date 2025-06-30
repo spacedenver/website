@@ -5,7 +5,7 @@ const title = "Sign in";
 
 <Layout title={title}>
   <main class="flex-1 flex flex-col gap-4 items-center p-4 justify-center">
-    <section class="sign-in-card bg-gradient border-4 border-[#ffffff] rounded-lg p-6 transition-transform duration-500 ease hover:transform hover:translate-y-1 w-full max-w-md">
+    <section class="bg-gradient card-hover-effect border-4 border-[#ffffff] rounded-lg p-6 w-full max-w-md">
       <h1 class="font-semibold text-2xl text-white w-full mb-1">
         {title}
       </h1>
@@ -45,22 +45,3 @@ const title = "Sign in";
     </section>
   </main>
 </Layout>
-
-<style>
-  .bg-gradient {
-    background: linear-gradient(135deg, #E51F5D, #F68830, #F5D54C, #FDE3B7);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease;
-  }
-  .bg-gradient:hover {
-    transform: translateY(-5px);
-  }
-  .sign-in-card {
-    background: linear-gradient(135deg, #E51F5D, #F68830, #F5D54C, #FDE3B7);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease;
-  }
-  .sign-in-card:hover {
-    transform: translateY(-5px);
-  }
-</style>

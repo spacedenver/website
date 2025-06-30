@@ -51,3 +51,198 @@ input[type="checkbox"]:checked, input[type="radio"]:checked {
 input[type="radio"] {
   border-radius: 50% !important;
 }
+
+/* Common gradients */
+.bg-gradient {
+  background: linear-gradient(135deg, #E51F5D, #E51F5D, #F68830, #F5D54C, #FDE3B7);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.bg-gradient:hover {
+  transform: translateY(-5px);
+}
+
+.custom-gradient { /* Used in logos.astro and sponsors.astro */
+  background: linear-gradient(135deg, #E51F5D, #F68830, #F5D54C, #FDE3B7);
+}
+
+.faq-gradient { /* Used in resources.astro */
+  background: linear-gradient(135deg, #000000, #000000);
+}
+
+/* Common card styles */
+.card-hover-effect {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+}
+
+/* Common image styles */
+.circle-image { /* Used in hero.astro and heatpunk_summit.astro */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.venue-image { /* Used in heatpunk_summit.astro, bitcoin_financial_services.astro, venue.astro */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-logo { /* Used in sponsors.astro */
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.sponsor-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Common icon styles */
+.icon-circle { /* Used in venue.astro */
+  background: black;
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle .icon {
+  color: white;
+}
+
+/* Common volunteer/headshot styles */
+.volunteer-container { /* Used in about.astro and venue.astro */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.volunteer { /* Used in about.astro and venue.astro */
+  display: inline-block;
+  text-align: center;
+}
+
+.volunteer img { /* Used in about.astro and venue.astro */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Other global styles */
+.white-svg { /* Used in logos.astro and about.astro */
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.calendar-iframe { /* Used in events.astro */
+  width: 100%;
+  height: 90vh;
+  border: 1px solid #bfcbda88;
+  border-radius: 4px;
+}
+
+/* Global body/html overflow fix */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Grid utilities */
+.sponsors-grid {
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) { /* Large screens */
+  .sponsors-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) { /* Medium screens */
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+@media (max-width: 767px) { /* Small screens */
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+/* Contact grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 468px) and (orientation: landscape) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Team card styles */
+.team-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Iframe container */
+.iframe-container {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .iframe-container {
+    padding-left: 180px;
+    padding-right: 180px;
+  }
+}
+
+/* Listmonk form styles */
+.listmonk-form input {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.listmonk-form input:hover {
+  background-color: #f0f0f0;
+}
+
+.listmonk-form button:hover {
+  background-color: gray;
+}
